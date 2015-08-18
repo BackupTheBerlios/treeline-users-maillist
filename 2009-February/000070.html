@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [TreeLine-users] 1.2.2 crashes on exit if text is copied to	the clipboard
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/treeline-users/2009-February/index.html" >
+   <LINK REL="made" HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%201.2.2%20crashes%20on%20exit%20if%20text%20is%20copied%20to%09the%0A%20clipboard&In-Reply-To=%3C20090227160351.33753iqunjv4u12c%40www.hepe.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000069.html">
+   <LINK REL="Next"  HREF="000071.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[TreeLine-users] 1.2.2 crashes on exit if text is copied to	the clipboard</H1>
+    <B>Aaron Digulla</B> 
+    <A HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%201.2.2%20crashes%20on%20exit%20if%20text%20is%20copied%20to%09the%0A%20clipboard&In-Reply-To=%3C20090227160351.33753iqunjv4u12c%40www.hepe.com%3E"
+       TITLE="[TreeLine-users] 1.2.2 crashes on exit if text is copied to	the clipboard">digulla at hepe.com
+       </A><BR>
+    <I>Fri Feb 27 16:03:51 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000069.html">[TreeLine-users] 1.2.2 crashes on exit if text is copied to	the	clipboard
+</A></li>
+        <LI>Next message: <A HREF="000071.html">[TreeLine-users] 1.2.2 crashes on exit if text is copied to	the	clipboard
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#70">[ date ]</a>
+              <a href="thread.html#70">[ thread ]</a>
+              <a href="subject.html#70">[ subject ]</a>
+              <a href="author.html#70">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Zitat von Doug Bell &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/treeline-users">doug101 at bellz.org</A>&gt;:
+
+&gt;<i> chris wrote:
+</I>&gt;&gt;<i> Andrew Schulman wrote:
+</I>&gt;&gt;<i> &gt; Start Treeline 1.2.2, copy some text to the clipboard, then exit Treeline.
+</I>&gt;&gt;<i> &gt; You'll get a crash dialog.  Thanks, Andrew.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Not on Mac OS X (Leopard 10.5.6). So maybe windows_only bug?
+</I>&gt;<i>
+</I>&gt;<i> Apparently.  It doesn't happen in Linux either.  I really hate Windows
+</I>&gt;<i> sometimes.
+</I>&gt;<i>
+</I>&gt;<i> I'll play with it to see if I can find a fix, but these types of bugs
+</I>&gt;<i> can be hard to pin down...
+</I>
+On Windows, Qt doesn't copy the object into the clipboard but  
+registers a callback method in the clipboard which gets called when  
+someone does a paste somewhere. This way, the method can figure out  
+what the receiver can understand and produce the correct data stream  
+(text, unicode, HTML, whatever).
+
+You must unregister this method in the clipboard API to fix the  
+dangling pointer. In the shutdown code of Treeline, call:
+
+cb = QApplication.clipboard()
+if cb.ownsSelection ():
+     cb.clear()
+
+That should do the trick.
+
+Regards,
+
+-- 
+Aaron &quot;Optimizer&quot; Digulla a.k.a. Philmann Dark
+&quot;It's not the universe that's limited, it's our imagination.
+Follow me and I'll show you something beyond the limits.&quot;
+<A HREF="http://www.pdark.de/">http://www.pdark.de/</A>                   <A HREF="http://blog.pdark.de/">http://blog.pdark.de/</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000069.html">[TreeLine-users] 1.2.2 crashes on exit if text is copied to	the	clipboard
+</A></li>
+	<LI>Next message: <A HREF="000071.html">[TreeLine-users] 1.2.2 crashes on exit if text is copied to	the	clipboard
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#70">[ date ]</a>
+              <a href="thread.html#70">[ thread ]</a>
+              <a href="subject.html#70">[ subject ]</a>
+              <a href="author.html#70">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/treeline-users">More information about the TreeLine-users
+mailing list</a><br>
+</body></html>

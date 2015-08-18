@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [TreeLine-users] Suggestion for a TreeLine Enhancement
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/treeline-users/2010-September/index.html" >
+   <LINK REL="made" HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20Suggestion%20for%20a%20TreeLine%20Enhancement&In-Reply-To=%3C20100919145608.GA4798%40bellz.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000129.html">
+   <LINK REL="Next"  HREF="000132.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[TreeLine-users] Suggestion for a TreeLine Enhancement</H1>
+    <B>Doug Bell</B> 
+    <A HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20Suggestion%20for%20a%20TreeLine%20Enhancement&In-Reply-To=%3C20100919145608.GA4798%40bellz.org%3E"
+       TITLE="[TreeLine-users] Suggestion for a TreeLine Enhancement">doug101 at bellz.org
+       </A><BR>
+    <I>Sun Sep 19 16:56:08 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000129.html">[TreeLine-users] Suggestion for a TreeLine Enhancement
+</A></li>
+        <LI>Next message: <A HREF="000132.html">[TreeLine-users] Suggestion for a TreeLine Enhancement
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#130">[ date ]</a>
+              <a href="thread.html#130">[ thread ]</a>
+              <a href="subject.html#130">[ subject ]</a>
+              <a href="author.html#130">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Tony B. Shepherd wrote:
+&gt;<i> Hi Doug -
+</I>&gt;<i> 
+</I>&gt;<i> Me again :)
+</I>&gt;<i> 
+</I>&gt;<i> Windows XP Pro SP 3, Tree Line 1.2.3, no local modifications.
+</I>&gt;<i> 
+</I>&gt;<i> As I've said before, thanks for a very nifty organizer - I owe you at least
+</I>&gt;<i> a cup of coffee for your generosity.
+</I>&gt;<i> 
+</I>&gt;<i> I was starting a new home project today, and wanted to make a check-off
+</I>&gt;<i> list. I maintain a library of software packages we use at home, and store
+</I>&gt;<i> the distribution files in sub-directories. For example, a directory tree
+</I>&gt;<i> might be:
+</I>&gt;<i>   e:\Software Distributions
+</I>&gt;<i>   e:\Software Distributions\Sumatra PDF Reader
+</I>&gt;<i>   e:\Software Distributions\Thunderbird
+</I>&gt;<i>   e:\Software Distributions\Torpark 1.5.0.7
+</I>&gt;<i>   e:\Software Distributions\Treeline
+</I>&gt;<i>   e:\Software Distributions\U3 Software
+</I>&gt;<i>   e:\Software Distributions\UltraEdit
+</I>&gt;<i> 
+</I>&gt;<i> What I wanted to do was create a &quot;nest&quot; of similar items in TreeLine, one
+</I>&gt;<i> per package, where I could make notes, delete-when-done the items, etc.
+</I>&gt;<i> Nothing fancy. I need to check and update the packages where necessary, note
+</I>&gt;<i> the current support web sites, track purchase and license data, and other
+</I>&gt;<i> information.
+</I>&gt;<i> 
+</I>&gt;<i> Left tree nodes might look like this in Treeline:
+</I>&gt;<i>   Update software
+</I>&gt;<i>     Sumatra PDF Reader
+</I>&gt;<i>     Thunderbird
+</I>&gt;<i>     Torpark 1.5.0.7
+</I>&gt;<i>     Treeline
+</I>&gt;<i>     U3 Software
+</I>&gt;<i>     UltraEdit
+</I>&gt;<i> 
+</I>&gt;<i> So what I needed to do was:
+</I>&gt;<i>   {enter to insert new sibling after}
+</I>&gt;<i>   {type in name of package}
+</I>&gt;<i>   {enter to complete entry}
+</I>&gt;<i>     etc.
+</I>&gt;<i> 
+</I>&gt;<i> Being lazy, I thought: how about I paste the output of a DIR (like an &quot;ls&quot;)
+</I>&gt;<i> command into TreeLine? So I tried it and - nothing happened. Nothing.
+</I>&gt;<i> 
+</I>&gt;<i> In my case I was able to use an editor and make manual insertions into the
+</I>&gt;<i> TRL file. No big deal, but it got me to thinking: it might be nice to do
+</I>&gt;<i> some list processing in TreeLine - something where perhaps a spreadsheet or
+</I>&gt;<i> database could be used as a source of data for a set of nodes.
+</I>
+Did you try using the Title List pane of the right-hand view?  The upper
+portion just lets you edit the title of the current node, but the lower
+portion is an editable list of the children of the current node.  You
+can paste a text list of node titles into this view, one node title per
+text line.
+
+&gt;<i> I know there is an import capability in TreeLine, but that opens and creates
+</I>&gt;<i> a new file, and what I wanted to do was a bit more elaborate: I wanted to
+</I>&gt;<i> create new nodes in an existing file with the first field value for each
+</I>&gt;<i> node defined.
+</I>&gt;<i> 
+</I>&gt;<i> So my suggestion: how about a new command (perhaps Data / Import list) that
+</I>&gt;<i> imports (from the clipboard only) sets of values. Values are EOL terminated,
+</I>&gt;<i> but embedded TAB characters are honored (more in a sec). Beginning with the
+</I>&gt;<i> current node, replace fields with the clipboard values, skipping
+</I>&gt;<i> un-referenced and/or incompatible fields in a node. Clipboard fields would
+</I>&gt;<i> be delimited by TABs, and an EOL completes the current record. A succeeding
+</I>&gt;<i> clipboard entry, if any, would create a new (empty) node with default values
+</I>&gt;<i> per their respective &quot;default values for new nodes&quot; for each field, then
+</I>&gt;<i> update the node as described above.
+</I>&gt;<i> 
+</I>&gt;<i> For example, say a data type (SAMPLE) contains the fields: Name (text), Size
+</I>&gt;<i> (number), Date (date), Price (number). The clipboard contains three lines:
+</I>&gt;<i> Can &lt;tab&gt; 12 &lt;tab&gt; 1/1/2001 &lt;eol&gt;
+</I>&gt;<i> Bottle &lt;tab&gt; 32 &lt;tab&gt; 6/7/2003 &lt;eol&gt;
+</I>&gt;<i> Case &lt;tab&gt; 144 &lt;tab&gt; 5/5/2010 &lt;eol&gt;
+</I>&gt;<i> 
+</I>&gt;<i> The cursor is on a node of type SAMPLE, which is followed by a node of type
+</I>&gt;<i> CUSTOMER, and the &quot;Data&quot; / &quot;Import List&quot; function is invoked. The &quot;current&quot;
+</I>&gt;<i> node's values for name, size and date would be replaced, and price would not
+</I>&gt;<i> be changed. Since there are two more entries on the clipboard, two more
+</I>&gt;<i> SAMPLE nodes would be created (with default values) and clipboard contents
+</I>&gt;<i> processed as above. The result would be 3 SAMPLE nodes followed by a
+</I>&gt;<i> CUSTOMER node.
+</I>&gt;<i> 
+</I>&gt;<i> If the cursor is not on a SAMPLE node - well, that's what &quot;Save First&quot; (or
+</I>&gt;<i> undo) is for :)
+</I>&gt;<i> 
+</I>&gt;<i> An alternative to the &lt;tab&gt; delimiters might be a robust version of CSV
+</I>&gt;<i> files (Comma Separated Values) - something that can cope with embedded
+</I>&gt;<i> quotes (like Excel does).
+</I>&gt;<i> 
+</I>&gt;<i> I suggest the command only process the clipboard to completely distinguish
+</I>&gt;<i> it from the File / Open type of test file import.
+</I>&gt;<i> 
+</I>&gt;<i> As an option (perhaps just for the current import, perhaps as an option in
+</I>&gt;<i> the &quot;Tools / General Options&quot; or &quot;Tools / File Options&quot; dialog box), new
+</I>&gt;<i> nodes would not be created so long as when the focus moves to the next node,
+</I>&gt;<i> the same TYPE node is encountered (SAMPLE in this case). When a different
+</I>&gt;<i> node type (CUSTOMER) is encountered, insertion of new (SAMPLE) type nodes
+</I>&gt;<i> begins. This would permit &quot;updating&quot; an existing list. Perhaps the option is
+</I>&gt;<i> labeled as &quot;Import List updates first: Y/N&quot; or something similar.
+</I>&gt;<i> 
+</I>&gt;<i> In that case, the clipboard values below would update the three SAMPLE
+</I>&gt;<i> entries from above (current node is &quot;can&quot;) and create a new SAMPLE node
+</I>&gt;<i> (because the fourth node in the TreeLine file is a type CUSTOMER node):
+</I>&gt;<i> &lt;tab&gt; &lt;tab&gt; &lt;tab&gt; .95 &lt;eol&gt;
+</I>&gt;<i> &lt;tab&gt; &lt;tab&gt; &lt;tab&gt; 1.49 &lt;eol&gt;
+</I>&gt;<i> &lt;tab&gt; &lt;tab&gt; &lt;tab&gt; 5.49 &lt;eol&gt;
+</I>&gt;<i> box &lt;tab&gt; 72 &lt;tab&gt; 9/9/2010 &lt;tab&gt; 2.98 &lt;eol&gt;
+</I>&gt;<i> 
+</I>&gt;<i> The result would be 4 SAMPLE nodes followed by a CUSTOMER node.
+</I>
+I'm not sure I followed all of that...
+
+Please let me know if pasting into the Title List view does most of what
+you want.
+
+Thanks,
+Doug
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000129.html">[TreeLine-users] Suggestion for a TreeLine Enhancement
+</A></li>
+	<LI>Next message: <A HREF="000132.html">[TreeLine-users] Suggestion for a TreeLine Enhancement
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#130">[ date ]</a>
+              <a href="thread.html#130">[ thread ]</a>
+              <a href="subject.html#130">[ subject ]</a>
+              <a href="author.html#130">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/treeline-users">More information about the TreeLine-users
+mailing list</a><br>
+</body></html>

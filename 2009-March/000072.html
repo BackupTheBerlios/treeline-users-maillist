@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [TreeLine-users] 1.2.2 crashes on exit if text is copied to	the clipboard
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/treeline-users/2009-March/index.html" >
+   <LINK REL="made" HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%201.2.2%20crashes%20on%20exit%20if%20text%20is%20copied%20to%09the%0A%20clipboard&In-Reply-To=%3C49AACBD5.3070606%40hepe.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000073.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[TreeLine-users] 1.2.2 crashes on exit if text is copied to	the clipboard</H1>
+    <B>Aaron Digulla</B> 
+    <A HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%201.2.2%20crashes%20on%20exit%20if%20text%20is%20copied%20to%09the%0A%20clipboard&In-Reply-To=%3C49AACBD5.3070606%40hepe.com%3E"
+       TITLE="[TreeLine-users] 1.2.2 crashes on exit if text is copied to	the clipboard">digulla at hepe.com
+       </A><BR>
+    <I>Sun Mar  1 18:54:29 CET 2009</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000073.html">[TreeLine-users] Introduce myself.... and a feature request
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#72">[ date ]</a>
+              <a href="thread.html#72">[ thread ]</a>
+              <a href="subject.html#72">[ subject ]</a>
+              <a href="author.html#72">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Doug Bell schrieb:
+
+&gt;&gt;<i> You must unregister this method in the clipboard API to fix the  
+</I>&gt;&gt;<i> dangling pointer. In the shutdown code of Treeline, call:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> cb = QApplication.clipboard()
+</I>&gt;&gt;<i> if cb.ownsSelection ():
+</I>&gt;&gt;<i>      cb.clear()
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> That should do the trick.
+</I>&gt;<i> 
+</I>&gt;<i> I think you probably meant cb.ownsClipboard() instead of
+</I>&gt;<i> cb.ownsSelection().
+</I>
+Maybe :) I can't verify this ATM.
+
+&gt;<i> But shouldn't clipboard data still be available after an application
+</I>&gt;<i> exits?  It doesn't seem right to clear it at exit.
+</I>
+You can do that but if you do, you must copy the data into clipboard and
+not specify a callback to generate the data when someone else wants it.
+
+The idea here is that it's futile to copy data to the clipboard which no
+one might ever want (especially not in this format). Therefore &quot;copy on
+demand&quot; is the default. This also allows to copy &quot;nothing&quot; if source and
+target is the same application. After the &quot;paste&quot; signal is received,
+you app can look which object is selected and create a clone without any
+data passing through the clipboard.
+
+Regards,
+
+-- 
+Aaron &quot;Optimizer&quot; Digulla a.k.a. Philmann Dark
+&quot;It's not the universe that's limited, it's our imagination.
+Follow me and I'll show you something beyond the limits.&quot;
+<A HREF="http://darkviews.blogspot.com/">http://darkviews.blogspot.com/</A>          <A HREF="http://www.pdark.de/">http://www.pdark.de/</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000073.html">[TreeLine-users] Introduce myself.... and a feature request
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#72">[ date ]</a>
+              <a href="thread.html#72">[ thread ]</a>
+              <a href="subject.html#72">[ subject ]</a>
+              <a href="author.html#72">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/treeline-users">More information about the TreeLine-users
+mailing list</a><br>
+</body></html>

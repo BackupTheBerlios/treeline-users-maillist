@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [TreeLine-users] Problem with a install
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/treeline-users/2011-November/index.html" >
+   <LINK REL="made" HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20Problem%20with%20a%20install&In-Reply-To=%3C4EB64AC6.1060605%40barbason.be%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000170.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[TreeLine-users] Problem with a install</H1>
+    <B>Alain BarBason</B> 
+    <A HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20Problem%20with%20a%20install&In-Reply-To=%3C4EB64AC6.1060605%40barbason.be%3E"
+       TITLE="[TreeLine-users] Problem with a install">alain at barbason.be
+       </A><BR>
+    <I>Sun Nov  6 09:52:22 CET 2011</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000170.html">[TreeLine-users] Problem with a install
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#169">[ date ]</a>
+              <a href="thread.html#169">[ thread ]</a>
+              <a href="subject.html#169">[ subject ]</a>
+              <a href="author.html#169">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+I install a fresh debian squeeze in a virtual machine, and I install 
+Treeline 1.4 but I have this message ?
+(Treeline 1.4 run on my laptop computer with squeeze also)
+
+Traceback (most recent call last):
+   File &quot;/usr/local/lib/treeline/treeline.py&quot;, line 160, in &lt;module&gt;
+     main()
+   File &quot;/usr/local/lib/treeline/treeline.py&quot;, line 154, in main
+     treeControl.firstWindow(args)
+   File &quot;/usr/local/lib/treeline/treecontrol.py&quot;, line 112, in firstWindow
+     self.autoOpen()
+   File &quot;/usr/local/lib/treeline/treecontrol.py&quot;, line 136, in autoOpen
+     if path and not self.openFile(path, False, False):
+   File &quot;/usr/local/lib/treeline/treecontrol.py&quot;, line 166, in openFile
+     if not self.checkAutoSave(filePath):
+   File &quot;/usr/local/lib/treeline/treecontrol.py&quot;, line 337, in checkAutoSave
+     _('&amp;Cancel File Open'), 0, 2)
+TypeError: arguments did not match any overloaded call:
+   QMessageBox.information(QWidget, QString, QString, 
+QMessageBox.StandardButtons buttons=QMessageBox.Ok, 
+QMessageBox.StandardButton defaultButton=QMessageBox.NoButton): argument 
+1 has unexpected type 'TreeControl'
+   QMessageBox.information(QWidget, QString, QString, int, int 
+button1=0, int button2=0): argument 1 has unexpected type 'TreeControl'
+   QMessageBox.information(QWidget, QString, QString, QString, QString 
+button1Text=QString(), QString button2Text=QString(), int 
+defaultButtonNumber=0, int escapeButtonNumber=-1): argument 1 has 
+unexpected type 'TreeControl'
+
+Have an idea ?
+
+alainBB
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000170.html">[TreeLine-users] Problem with a install
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#169">[ date ]</a>
+              <a href="thread.html#169">[ thread ]</a>
+              <a href="subject.html#169">[ subject ]</a>
+              <a href="author.html#169">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/treeline-users">More information about the TreeLine-users
+mailing list</a><br>
+</body></html>

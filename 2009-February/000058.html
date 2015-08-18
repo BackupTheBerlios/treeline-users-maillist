@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [TreeLine-users] plugin dialog launches then dies
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/treeline-users/2009-February/index.html" >
+   <LINK REL="made" HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20plugin%20dialog%20launches%20then%20dies&In-Reply-To=%3C5.1.0.14.2.20090206000940.029ae660%40iyaaku.pair.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000059.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[TreeLine-users] plugin dialog launches then dies</H1>
+    <B>Tim Riley</B> 
+    <A HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20plugin%20dialog%20launches%20then%20dies&In-Reply-To=%3C5.1.0.14.2.20090206000940.029ae660%40iyaaku.pair.com%3E"
+       TITLE="[TreeLine-users] plugin dialog launches then dies">eval at ryefish.com
+       </A><BR>
+    <I>Fri Feb  6 09:12:13 CET 2009</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000059.html">[TreeLine-users] plugin dialog launches then dies
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#58">[ date ]</a>
+              <a href="thread.html#58">[ thread ]</a>
+              <a href="subject.html#58">[ subject ]</a>
+              <a href="author.html#58">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello:
+
+I am attempting to make a plugin that pops up a dialog box I can interact 
+with while still being able to interact with the main Treeline window.
+I read in the PyQt documentation this is referred to as a 'modeless' dialog.
+
+The best I've been able to accomplish is to get the dialog to appear for a 
+split second before it abruptly disappear.
+It looks like my dialog is appearing fine (I can see its outline and just 
+make out the title) and is then destroyed.
+
+Is a modeless plugin possible?  I'm new to python &amp; Qt so perhaps I'm 
+making a very obvious mistake?
+I've tried numerous variations on the below code, all based upon using 
+show(), but to no avail:
+
+#!/usr/bin/env python
+# Modeless Dialog Test
+from PyQt4 import QtCore, QtGui
+
+class modeless:
+
+     # Add link to the menu
+     def __init__(self, interface):
+         self.interface = interface
+         text = &quot;Launch modeless dialog ...&quot;
+         menu = self.interface.getPulldownMenu(0)
+         actionBefore = menu.actions()[2]
+         action = QtGui.QAction(text, self.interface.mainWin)
+         action.connect(action, QtCore.SIGNAL('triggered(bool)'), 
+self.showWindow)
+         menu.insertAction(actionBefore, action)
+
+    # Display the modeless dialog
+     def showWindow(self):
+         window = MyForm()
+         window.show()
+
+class MyForm(QtGui.QWidget):
+
+     # Setup the dialog
+     def __init__(self, parent=None):
+         QtGui.QWidget.__init__(self, parent)
+         self.ui = Ui_Dialog()
+         self.ui.setupUi(self)
+
+class Ui_Dialog(object):
+
+     # Customize the dialog
+     def setupUi(self, Dialog):
+         Dialog.setObjectName(&quot;Dialog&quot;)
+         Dialog.resize(200, 200)
+
+def main(interface):
+     return modeless(interface)
+
+
+
+
+
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000059.html">[TreeLine-users] plugin dialog launches then dies
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#58">[ date ]</a>
+              <a href="thread.html#58">[ thread ]</a>
+              <a href="subject.html#58">[ subject ]</a>
+              <a href="author.html#58">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/treeline-users">More information about the TreeLine-users
+mailing list</a><br>
+</body></html>

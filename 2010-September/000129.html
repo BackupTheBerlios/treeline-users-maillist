@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [TreeLine-users] Suggestion for a TreeLine Enhancement
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/treeline-users/2010-September/index.html" >
+   <LINK REL="made" HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20Suggestion%20for%20a%20TreeLine%20Enhancement&In-Reply-To=%3C4C8F986D.6090902%40nashobavillage.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000130.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[TreeLine-users] Suggestion for a TreeLine Enhancement</H1>
+    <B>Tony B. Shepherd</B> 
+    <A HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20Suggestion%20for%20a%20TreeLine%20Enhancement&In-Reply-To=%3C4C8F986D.6090902%40nashobavillage.net%3E"
+       TITLE="[TreeLine-users] Suggestion for a TreeLine Enhancement">tbs at nashobavillage.net
+       </A><BR>
+    <I>Tue Sep 14 17:44:45 CEST 2010</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000130.html">[TreeLine-users] Suggestion for a TreeLine Enhancement
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#129">[ date ]</a>
+              <a href="thread.html#129">[ thread ]</a>
+              <a href="subject.html#129">[ subject ]</a>
+              <a href="author.html#129">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Doug -
+
+Me again :)
+
+Windows XP Pro SP 3, Tree Line 1.2.3, no local modifications.
+
+As I've said before, thanks for a very nifty organizer - I owe you at least
+a cup of coffee for your generosity.
+
+I was starting a new home project today, and wanted to make a check-off
+list. I maintain a library of software packages we use at home, and store
+the distribution files in sub-directories. For example, a directory tree
+might be:
+  e:\Software Distributions
+  e:\Software Distributions\Sumatra PDF Reader
+  e:\Software Distributions\Thunderbird
+  e:\Software Distributions\Torpark 1.5.0.7
+  e:\Software Distributions\Treeline
+  e:\Software Distributions\U3 Software
+  e:\Software Distributions\UltraEdit
+
+What I wanted to do was create a &quot;nest&quot; of similar items in TreeLine, one
+per package, where I could make notes, delete-when-done the items, etc.
+Nothing fancy. I need to check and update the packages where necessary, note
+the current support web sites, track purchase and license data, and other
+information.
+
+Left tree nodes might look like this in Treeline:
+  Update software
+    Sumatra PDF Reader
+    Thunderbird
+    Torpark 1.5.0.7
+    Treeline
+    U3 Software
+    UltraEdit
+
+So what I needed to do was:
+  {enter to insert new sibling after}
+  {type in name of package}
+  {enter to complete entry}
+    etc.
+
+Being lazy, I thought: how about I paste the output of a DIR (like an &quot;ls&quot;)
+command into TreeLine? So I tried it and - nothing happened. Nothing.
+
+In my case I was able to use an editor and make manual insertions into the
+TRL file. No big deal, but it got me to thinking: it might be nice to do
+some list processing in TreeLine - something where perhaps a spreadsheet or
+database could be used as a source of data for a set of nodes.
+
+I know there is an import capability in TreeLine, but that opens and creates
+a new file, and what I wanted to do was a bit more elaborate: I wanted to
+create new nodes in an existing file with the first field value for each
+node defined.
+
+So my suggestion: how about a new command (perhaps Data / Import list) that
+imports (from the clipboard only) sets of values. Values are EOL terminated,
+but embedded TAB characters are honored (more in a sec). Beginning with the
+current node, replace fields with the clipboard values, skipping
+un-referenced and/or incompatible fields in a node. Clipboard fields would
+be delimited by TABs, and an EOL completes the current record. A succeeding
+clipboard entry, if any, would create a new (empty) node with default values
+per their respective &quot;default values for new nodes&quot; for each field, then
+update the node as described above.
+
+For example, say a data type (SAMPLE) contains the fields: Name (text), Size
+(number), Date (date), Price (number). The clipboard contains three lines:
+Can &lt;tab&gt; 12 &lt;tab&gt; 1/1/2001 &lt;eol&gt;
+Bottle &lt;tab&gt; 32 &lt;tab&gt; 6/7/2003 &lt;eol&gt;
+Case &lt;tab&gt; 144 &lt;tab&gt; 5/5/2010 &lt;eol&gt;
+
+The cursor is on a node of type SAMPLE, which is followed by a node of type
+CUSTOMER, and the &quot;Data&quot; / &quot;Import List&quot; function is invoked. The &quot;current&quot;
+node's values for name, size and date would be replaced, and price would not
+be changed. Since there are two more entries on the clipboard, two more
+SAMPLE nodes would be created (with default values) and clipboard contents
+processed as above. The result would be 3 SAMPLE nodes followed by a
+CUSTOMER node.
+
+If the cursor is not on a SAMPLE node - well, that's what &quot;Save First&quot; (or
+undo) is for :)
+
+An alternative to the &lt;tab&gt; delimiters might be a robust version of CSV
+files (Comma Separated Values) - something that can cope with embedded
+quotes (like Excel does).
+
+I suggest the command only process the clipboard to completely distinguish
+it from the File / Open type of test file import.
+
+As an option (perhaps just for the current import, perhaps as an option in
+the &quot;Tools / General Options&quot; or &quot;Tools / File Options&quot; dialog box), new
+nodes would not be created so long as when the focus moves to the next node,
+the same TYPE node is encountered (SAMPLE in this case). When a different
+node type (CUSTOMER) is encountered, insertion of new (SAMPLE) type nodes
+begins. This would permit &quot;updating&quot; an existing list. Perhaps the option is
+labeled as &quot;Import List updates first: Y/N&quot; or something similar.
+
+In that case, the clipboard values below would update the three SAMPLE
+entries from above (current node is &quot;can&quot;) and create a new SAMPLE node
+(because the fourth node in the TreeLine file is a type CUSTOMER node):
+&lt;tab&gt; &lt;tab&gt; &lt;tab&gt; .95 &lt;eol&gt;
+&lt;tab&gt; &lt;tab&gt; &lt;tab&gt; 1.49 &lt;eol&gt;
+&lt;tab&gt; &lt;tab&gt; &lt;tab&gt; 5.49 &lt;eol&gt;
+box &lt;tab&gt; 72 &lt;tab&gt; 9/9/2010 &lt;tab&gt; 2.98 &lt;eol&gt;
+
+The result would be 4 SAMPLE nodes followed by a CUSTOMER node.
+
+Okay, I'm going to run hide in the shadows now, flame suit on :) Again,
+thanks for a very useful program.
+-- 
+Regards  --  Tony B. Shepherd  --  <A HREF="https://lists.berlios.de/mailman/listinfo/treeline-users">tbs at nashobavillage.net</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000130.html">[TreeLine-users] Suggestion for a TreeLine Enhancement
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#129">[ date ]</a>
+              <a href="thread.html#129">[ thread ]</a>
+              <a href="subject.html#129">[ subject ]</a>
+              <a href="author.html#129">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/treeline-users">More information about the TreeLine-users
+mailing list</a><br>
+</body></html>

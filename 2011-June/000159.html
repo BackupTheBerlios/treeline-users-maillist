@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [TreeLine-users] TreeLine-users Digest, Vol 31, Issue 4
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/treeline-users/2011-June/index.html" >
+   <LINK REL="made" HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20TreeLine-users%20Digest%2C%20Vol%2031%2C%20Issue%204&In-Reply-To=%3C1309315761.57851.YahooMailClassic%40web24609.mail.ird.yahoo.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000158.html">
+   <LINK REL="Next"  HREF="000160.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[TreeLine-users] TreeLine-users Digest, Vol 31, Issue 4</H1>
+    <B>M.Karoglou</B> 
+    <A HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20TreeLine-users%20Digest%2C%20Vol%2031%2C%20Issue%204&In-Reply-To=%3C1309315761.57851.YahooMailClassic%40web24609.mail.ird.yahoo.com%3E"
+       TITLE="[TreeLine-users] TreeLine-users Digest, Vol 31, Issue 4">mkaroglou at yahoo.co.uk
+       </A><BR>
+    <I>Wed Jun 29 04:49:21 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000158.html">[TreeLine-users] feauture suggestions
+</A></li>
+        <LI>Next message: <A HREF="000160.html">[TreeLine-users] TreeLine-users Digest, Vol 31, Issue 4
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#159">[ date ]</a>
+              <a href="thread.html#159">[ thread ]</a>
+              <a href="subject.html#159">[ subject ]</a>
+              <a href="author.html#159">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Doug and Treeline-users,
+
+Many thanks Doug for you quick response - and I must say I totally feel you when you say you just haven't found the time to go round it (isn't it as if the expression &quot;plenty of time&quot; wass made only for the others?).
+
+I'm very glad you're thinking about the macro-type rewrite because I truly believe it will be a benchmark change (which should deserve becoming the 2.xx treeline version) - particularly because it will allow for some quite useful automation features (in fact from what I've read, most of the feauture suggestions in this mailing list would be trivially implemented with it).
+
+As for the choice/combination issue, think of the following scenario (which is actually part of the example I've used for my wife when I was trying to explain to her why I was so excited about Treeline). Imagine you've got some form of a cookbook - in some nodes you've got the recipes. Then you could create a Combination field for the recipes data type in order to include the ingredients (ok, my wife found the flaw to this approach - I didn't think about adding the quantities - but still bear with me).
+
+Now, if you use the existing approach, every time you need to add an incredient you've got to change the underlying data-type (so far so good). But what if you want to add extra information about each ingredient (e.g. &quot;sugar&quot; - &quot;sometimes you can replace it with honey&quot; and &quot;for the diabetics use aspartame&quot;; or you've got an exotic ingredient's name and you want to include a picture to describe it)? If you could use the children of a node as the entries of the Combination field then you could simply add this info as their children (and refer to it whenever you want to alter something). For a few entries, then you could simply manually update the two lists (one in the node and one in the combination field). But once the items get beyond 20-30 then this would become quite cumbersome.
+
+Imagine now what would happen if you had decided that the incredients were too many for one list and it would be best if you spit them into two groups -say one for the standard and one for the exotic ingredients. Right now, you would have to add an extra Combination field to the recipes data-type and manually spit the entries of each list. If you could construct a Combination field out of the children of a node then the whole endeavour would be simply to a. divide the ingredients into two subgroups with the easiness that the drag-n-drop feature of Treeline allows, b. add an extra Combination field to the recipes data-type; and c. redirect the two Combination fields to point to the correct (sub)list. For more than 2 groups the benefits from the 2nd approach are inevitably combounded. So I hope I've managed to exemplify why I felt that this feature would be useful.
+
+As for the 'sticky Add Internal Link' feature, I also think it is rather simple (...I hope you won't beat me if you ever bump into me!). In pseudocode, instead of having a call to the function &quot;On_left_click_Copy_internal_link_to_textbox;&quot; put it in a while loop (&quot;While right_click=FALSE; On_left_click_Copy_internal_link_to_textbox; Wend;&quot;). However, I could be wrong because I cannot be sure as to how you've implemented the whole thing (and when it comes to Python I am as ignorant as a man can be).
+
+Anyway, I've written quite a lot and this might give the wrong impression that I've found some shortcomings to Treeline - and that can't be further from the truth. I am truly grateful for this gem and the actual reason for sending this and the previous e-mails was more to thank you Doug for it rather than anything else (it's just that I felt that posting a simple 'Thank you' would be a bit cheesy...well, wouldn't it???)
+
+Many thanks once more
+
+All the best
+Mike
+
+--- On Tue, 28/6/11, <A HREF="https://lists.berlios.de/mailman/listinfo/treeline-users">treeline-users-request at lists.berlios.de</A> &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/treeline-users">treeline-users-request at lists.berlios.de</A>&gt; wrote:
+
+From: <A HREF="https://lists.berlios.de/mailman/listinfo/treeline-users">treeline-users-request at lists.berlios.de</A> &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/treeline-users">treeline-users-request at lists.berlios.de</A>&gt;
+Subject: TreeLine-users Digest, Vol 31, Issue 4
+To: <A HREF="https://lists.berlios.de/mailman/listinfo/treeline-users">treeline-users at lists.berlios.de</A>
+Date: Tuesday, 28 June, 2011, 11:00
+
+Send TreeLine-users mailing list submissions to
+&#160;&#160;&#160; <A HREF="https://lists.berlios.de/mailman/listinfo/treeline-users">treeline-users at lists.berlios.de</A>
+
+To subscribe or unsubscribe via the World Wide Web, visit
+&#160;&#160;&#160; <A HREF="https://lists.berlios.de/mailman/listinfo/treeline-users">https://lists.berlios.de/mailman/listinfo/treeline-users</A>
+or, via email, send a message with subject or body 'help' to
+&#160;&#160;&#160; <A HREF="https://lists.berlios.de/mailman/listinfo/treeline-users">treeline-users-request at lists.berlios.de</A>
+
+You can reach the person managing the list at
+&#160;&#160;&#160; <A HREF="https://lists.berlios.de/mailman/listinfo/treeline-users">treeline-users-owner at lists.berlios.de</A>
+
+When replying, please edit your Subject line so it is more specific
+than &quot;Re: Contents of TreeLine-users digest...&quot;
+
+
+Today's Topics:
+
+&#160;&#160;&#160;1. Re: feauture suggestions (Doug Bell)
+
+
+----------------------------------------------------------------------
+
+Message: 1
+Date: Mon, 27 Jun 2011 21:59:53 -0400
+From: Doug Bell &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/treeline-users">doug101 at bellz.org</A>&gt;
+To: <A HREF="https://lists.berlios.de/mailman/listinfo/treeline-users">treeline-users at lists.berlios.de</A>
+Subject: Re: [TreeLine-users] feauture suggestions
+Message-ID: &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/treeline-users">20110628015953.GA28943 at bellz.org</A>&gt;
+Content-Type: text/plain; charset=us-ascii
+
+M.Karoglou wrote:
+&gt;<i> Hi Doug and Treeline-users,
+</I>&gt;<i> 
+</I>&gt;<i> I am a relatively new but very enthusiastic user of Treeline - and I
+</I>&gt;<i> must say that so far I am truly impressed. I honestly thank you Doug
+</I>&gt;<i> for the wonderful work you've done so far. Here are some feature
+</I>&gt;<i> suggestions for further improvement (and implicitly questions if there
+</I>&gt;<i> is a way round these that I haven't figured out yet) just in case you
+</I>&gt;<i> find them interesting.
+</I>&gt;<i> 
+</I>&gt;<i> a. An option for the right-click-menu in the editor view for adding
+</I>&gt;<i> multiple internal links from which you can exit by a right-click
+</I>&gt;<i> (...it just saves a few click here and there I know...so, you can
+</I>&gt;<i> dismiss it as a very-lazy-guy's whim!)
+</I>
+Sorry, but this seems rather complicated for a minor reduction in
+clicks.
+
+&gt;<i> b. Allowing a Choice or Combination field to contain the (1st level
+</I>&gt;<i> only?) children of a specific node (it can save a lot of configuring
+</I>&gt;<i> existing and creating new data types).
+</I>
+What would the field end up containing once you clicked on one of the
+chilren in the pull-down?&#160; Just a static copy of the child's title?
+What is the use case for this?
+
+&gt;<i> c. Some form of command-line execution of the menu/toolbar options. I
+</I>&gt;<i> could think of various ways how such a feature could prove useful. For
+</I>&gt;<i> example, think of the situation of having different treeline files but
+</I>&gt;<i> you need to use the same data filter that contains 3-4 rules. Then,
+</I>&gt;<i> instead of re-entering the rules to each file, you could simply save
+</I>&gt;<i> the command as a plain text somewhere and copy and paste it to each
+</I>&gt;<i> file. (I have the impression it must be rather straightforward to
+</I>&gt;<i> implement this given that each item in the toolbars make a function
+</I>&gt;<i> call anyway). In fact, on this you can then built up a whole bunch of
+</I>&gt;<i> things for automation - e.g. some form of a field that contains only a
+</I>&gt;<i> sequence of such calls (I'm thinking now the good-old DOS batch files)
+</I>&gt;<i> which could be used for example for customising the appearance of each
+</I>&gt;<i> treeline file (by setting at loading time in a sequence the background
+</I>&gt;<i> colour and the text fonts).
+</I>
+I've been thinking of something like this for the full rewrite of
+TreeLine.&#160; It's sort of a cross between the current version's plugins
+and a macro language.&#160; I'm not anywhere close to implementing it yet,
+though.
+
+Unfortunately, I've been too busy with other stuff (both work and
+personal) to spend much time on the rewrite.&#160; Hopefully that will
+eventually change, but I don't know when.
+
+&gt;<i> So far I cannot think of anything else (hey, you've a hell-of-a-job
+</I>&gt;<i> here!) - but I'll let you know if I get any inspiration.
+</I>&gt;<i> 
+</I>&gt;<i> Many thanks once more for this great tool.
+</I>
+You're welcome!
+
+-Doug
+
+
+------------------------------
+
+_______________________________________________
+TreeLine-users mailing list
+<A HREF="https://lists.berlios.de/mailman/listinfo/treeline-users">TreeLine-users at lists.berlios.de</A>
+<A HREF="https://lists.berlios.de/mailman/listinfo/treeline-users">https://lists.berlios.de/mailman/listinfo/treeline-users</A>
+
+
+End of TreeLine-users Digest, Vol 31, Issue 4
+*********************************************
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000158.html">[TreeLine-users] feauture suggestions
+</A></li>
+	<LI>Next message: <A HREF="000160.html">[TreeLine-users] TreeLine-users Digest, Vol 31, Issue 4
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#159">[ date ]</a>
+              <a href="thread.html#159">[ thread ]</a>
+              <a href="subject.html#159">[ subject ]</a>
+              <a href="author.html#159">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/treeline-users">More information about the TreeLine-users
+mailing list</a><br>
+</body></html>

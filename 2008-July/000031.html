@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [TreeLine-users] New Stable Release - 1.2.0
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/treeline-users/2008-July/index.html" >
+   <LINK REL="made" HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20New%20Stable%20Release%20-%201.2.0&In-Reply-To=%3C48830AFE.7060402%40ebook.cz%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000030.html">
+   <LINK REL="Next"  HREF="000032.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[TreeLine-users] New Stable Release - 1.2.0</H1>
+    <B>chris</B> 
+    <A HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20New%20Stable%20Release%20-%201.2.0&In-Reply-To=%3C48830AFE.7060402%40ebook.cz%3E"
+       TITLE="[TreeLine-users] New Stable Release - 1.2.0">chris at ebook.cz
+       </A><BR>
+    <I>Sun Jul 20 11:53:02 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000030.html">[TreeLine-users] 1st attempt at a plugin
+</A></li>
+        <LI>Next message: <A HREF="000032.html">[TreeLine-users] Long Output &amp; Data Extraction
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#31">[ date ]</a>
+              <a href="thread.html#31">[ thread ]</a>
+              <a href="subject.html#31">[ subject ]</a>
+              <a href="author.html#31">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>TreeLine 1.2.0 compile and run very well on Mac OS X 10.5.4 (cs_CZ 
+locale setting), with only small usual corrections(same as in older 
+unstable betas) in treeline.py.
+
+How to install:
+1. Download and install qt-mac-opensource-4.4.0.dmg.
+2. Download and configure-make-make install sip-4.7.6.tar.gz
+3. Download and configure-make-make install PyQt-mac-gpl-4.4.2.tar.gz
+4. Download a decompress treeline-1.2.0.tar.gz
+4a. Edit source code of &quot;treeline.py&quot; file, or apply diff.
+
+Here is a diff:
+=================================================
+110c110,111
+&lt;     except (AttributeError, LookupError, locale.Error):
+---
+ &gt; # NOTE: chris fixed
+ &gt;     except (AttributeError, LookupError, TypeError, locale.Error):
+119,121c120,122
+&lt;             except (AttributeError, LookupError, locale.Error):
+&lt;                 globalref.localTextEncoding = 'utf-8'
+&lt;
+---
+ &gt; # NOTE: chris fixed
+ &gt;             except (AttributeError, LookupError, TypeError, 
+locale.Error):
+ &gt;                 globalref.localTextEncoding = 'utf-8'
+=================================================
+
+4b. Install TreeLine using standard install.py
+5. Start treeline from terminal. Have fun.
+
+btw, It looks like py2app 0.3.6 has some problem with Qt 4.4.0 
+instalation on my laptop(or with PyQt or SIP), so my attempt to create 
+statically linked application bundle ends with some strange errors(there 
+were no such errors with older versions of Qt,PyQt,SIP), so I have to 
+start TreeLine 1.2.0 from commandline for now :-( but on the other hand, 
+it runs much faster :-)
+
+
+Doug Bell wrote:
+&gt;<i> The TreeLine devlopment branch is finally released as stable!  You can
+</I>&gt;<i> download the new 1.2.0 release at &lt;<A HREF="http://treeline.bellz.org">http://treeline.bellz.org</A>&gt;.
+</I>&gt;<i> 
+</I>&gt;<i> Changes since 1.1.10 include an updated French translation and a few bug
+</I>&gt;<i> fixes.  Bugs fixed include problems with good files being replaced with
+</I>&gt;<i> bad backup files and fixes for path fields with spaces in the filenames.
+</I>&gt;<i> 
+</I>&gt;<i> The extensive changes since the last stable release (1.0.2) are listed on
+</I>&gt;<i> the website.
+</I>&gt;<i> 
+</I>&gt;<i> Currently, the new release is only available in English and French.  As
+</I>&gt;<i> always, volunteers to update translations for other languages are
+</I>&gt;<i> welcome.
+</I>&gt;<i> 
+</I>&gt;<i> Doug.
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> TreeLine-users mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/treeline-users">TreeLine-users at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/treeline-users">https://lists.berlios.de/mailman/listinfo/treeline-users</A>
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000030.html">[TreeLine-users] 1st attempt at a plugin
+</A></li>
+	<LI>Next message: <A HREF="000032.html">[TreeLine-users] Long Output &amp; Data Extraction
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#31">[ date ]</a>
+              <a href="thread.html#31">[ thread ]</a>
+              <a href="subject.html#31">[ subject ]</a>
+              <a href="author.html#31">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/treeline-users">More information about the TreeLine-users
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [TreeLine-users] 1.1.10:  Development Snapshot Release
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/treeline-users/2008-January/index.html" >
+   <LINK REL="made" HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%201.1.10%3A%20%20Development%20Snapshot%20Release&In-Reply-To=%3C20080115132958.GA28982%40bellz.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000001.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[TreeLine-users] 1.1.10:  Development Snapshot Release</H1>
+    <B>Doug Bell</B> 
+    <A HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%201.1.10%3A%20%20Development%20Snapshot%20Release&In-Reply-To=%3C20080115132958.GA28982%40bellz.org%3E"
+       TITLE="[TreeLine-users] 1.1.10:  Development Snapshot Release">doug101 at bellz.org
+       </A><BR>
+    <I>Tue Jan 15 14:29:58 CET 2008</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000001.html">[TreeLine-users] Bug? 1.1.10: Development Snapshot Release node	numbering eats node titles
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#0">[ date ]</a>
+              <a href="thread.html#0">[ thread ]</a>
+              <a href="subject.html#0">[ subject ]</a>
+              <a href="author.html#0">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+The TreeLine project is alive again!  There is finally a new development
+release.  Sorry about the delay, but the period when I was too busy to
+work on TreeLine should be over.
+
+The largest change was improving HTML directory export.  There were also
+several minor updates and bug fixes.
+
+I'm also releasing the French GUI translation.  It is the only language
+with a complete translation for the GUI (so far).  I've also just
+finished modifying the ReadMe documentation, so the documentation
+translation updates can start soon.
+
+The translators tend to be busy with other projects, so any additional
+volunteers to help with translations are welcome.
+
+This development version is nearly ready for stable release.  The only
+missing feature is translations, and it doesn't seem to have any major
+bugs.  It should be suitable for most purposes.
+
+This release can be downloaded from
+&lt;<A HREF="http://treeline.bellz.org/download.html#unstable">http://treeline.bellz.org/download.html#unstable</A>&gt;.
+
+Note that the mailing list address has changed.  New messages can be
+sent to &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/treeline-users">treeline-users at lists.berlios.de</A>&gt;.  To view or change
+subscription information, go to
+&lt;<A HREF="https://lists.berlios.de/mailman/listinfo/treeline-users">https://lists.berlios.de/mailman/listinfo/treeline-users</A>&gt;.
+
+Thanks for testing!
+
+
+More details are in the changelog:
+
+Notes:
+
+  - This is an unstable development snapshot. It is nearly ready to
+    become a stable release, but it could still contain bugs. Testing
+    and bug reports are appreciated.
+
+  - The French translation of the GUI is the only one completed so far.
+    None of the documentation translations have been updated.
+
+  - On Linux, running TreeLine requires Qt version 4.1 or higher and
+    PyQt version 4.0 or higher. Binary packages may not be available yet
+    for these libraries in some distributions.
+
+  - If you've installed previous development releases, it is recommended
+    that you delete the old configuration file
+    (&quot;~/.treeline-1.1/treelinerc&quot; on Linux, &quot;Documents and
+    Settings\&lt;login&gt;\Application Data\bellz\treeline-1.1 \treeline.ini&quot;
+    on Windows) before running this release.
+
+Updates:
+
+  - Exporting to HTML directories has been improved. The file names are
+    generated from the reference field (were from the first field).
+    Internal links to nodes now work properly in the exported files.
+
+  - When saving a new file, the Save-As dialog now defaults to the top
+    directory in the recent file list.
+
+  - A translation of the GUI in French is now available. The i18n
+    installation file is a separate download.
+
+  - The ReadMe documentation file has been updated to clarify certain
+    usage issues.
+
+Bug Fixes:
+
+  - The other controls in the configuration dialog are updated
+    immediately when setting a data type to be derived from a generic.
+
+  - A recent file list bug that affected the httpload plugin has been
+    fixed. Also, a library need by the plugin (urllib) has been added to
+    the Windows installation.
+
+  - An error message about removing a status bar widget has been
+    eliminated.
+
+  - An error on a Mac when setting the language encoding has been fixed.
+
+  - Various issues with file paths containing Unicode characters have
+    been fixed.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000001.html">[TreeLine-users] Bug? 1.1.10: Development Snapshot Release node	numbering eats node titles
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#0">[ date ]</a>
+              <a href="thread.html#0">[ thread ]</a>
+              <a href="subject.html#0">[ subject ]</a>
+              <a href="author.html#0">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/treeline-users">More information about the TreeLine-users
+mailing list</a><br>
+</body></html>

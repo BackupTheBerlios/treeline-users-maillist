@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [TreeLine-users] 1.3.0:  Unstable development snapshot
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/treeline-users/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%201.3.0%3A%20%20Unstable%20development%20snapshot&In-Reply-To=%3C20091014155710.GA30517%40bellz.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000096.html">
+   <LINK REL="Next"  HREF="000098.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[TreeLine-users] 1.3.0:  Unstable development snapshot</H1>
+    <B>Doug Bell</B> 
+    <A HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%201.3.0%3A%20%20Unstable%20development%20snapshot&In-Reply-To=%3C20091014155710.GA30517%40bellz.org%3E"
+       TITLE="[TreeLine-users] 1.3.0:  Unstable development snapshot">doug101 at bellz.org
+       </A><BR>
+    <I>Wed Oct 14 17:57:10 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000096.html">[TreeLine-users] 1.2.4: Stable bug-fix release
+</A></li>
+        <LI>Next message: <A HREF="000098.html">[TreeLine-users] 1.3.0:  Unstable development snapshot
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#97">[ date ]</a>
+              <a href="thread.html#97">[ thread ]</a>
+              <a href="subject.html#97">[ subject ]</a>
+              <a href="author.html#97">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+It's finally time for the first snapshot release in a new development
+cycle.  This release adds multiple-window capabilities, easier inline
+internal links, and a new HTML export option.
+
+Please keep in mind that this snapshot is not complete and is probably
+buggy.  It should not be used for any critical work.  Feedback is
+apprecisted.
+
+It can be downloaded from
+&lt;<A HREF="http://treeline.bellz.org/download.html#unstable">http://treeline.bellz.org/download.html#unstable</A>&gt;.
+
+I hope to keep this development cycle much shorter than the last one.  I
+don't plan to include additional major changes until the next cycle.
+
+More details are in the changelog:
+
+Notes:
+
+  - This is an unstable development snapshot. It is not feature complete
+    and probably contains bugs. Testing and bug reports are appreciated,
+    but the stable release (TreeLine 1.2.x) should be used for critical
+    work.
+
+  - The documentation has not yet been updated to cover the new
+    features.
+
+  - The GUI and documentation translations have not yet been updated.
+
+New Features:
+
+  - Multiple TreeLine windows with different files can be open within
+    the same TreeLine session. The &quot;Open files in new windows&quot; general
+    option controls whether new windows are used when opening or
+    creating files.
+
+  - A &quot;Window&quot; menu has been added with commands to create new windows,
+    close windows, or select from a list of current windows.
+
+  - The &quot;Window-&gt;New Window&quot; command creates a new window with views of
+    the same TreeLine file. Changes in either window are saved in the
+    same document. This can be used to work in different sections of the
+    file simultaneously. For performance reasons, the non-active window
+    does not show the changes made in the active window until the
+    non-active window is focused.
+
+  - Starting TreeLine (from a shortcut, file association or command
+    line) will activate an existing TreeLine session if it is already
+    running. A new window will be opened if an unopened file was
+    specified by file association or in the command line.
+
+  - An &quot;Add internal link&quot; context menu has been added to text boxes in
+    the data editor. It prompts for another node to be clicked with the
+    mouse, then an inline internal link is added with that node's
+    reference information.
+
+  - Added an &quot;HTML directory pages&quot; export option. This will export to a
+    directory structure with an HTML file for every node. A navigation
+    pane on the left side of each page contains links to the node's
+    parent, uncles and children.
+
+Updates:
+
+  - The general options dialog has been split into three columns for
+    better viewing on small, wide displays.
+
+  - Additional export commands and export options have been added to the
+    plugin interface.
+
+  - To avoid a problem on the Mac platform, when TreeLine is run for the
+    first time, it lets the OS determine the window position.
+
+
+Thanks for testing!
+Doug
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000096.html">[TreeLine-users] 1.2.4: Stable bug-fix release
+</A></li>
+	<LI>Next message: <A HREF="000098.html">[TreeLine-users] 1.3.0:  Unstable development snapshot
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#97">[ date ]</a>
+              <a href="thread.html#97">[ thread ]</a>
+              <a href="subject.html#97">[ subject ]</a>
+              <a href="author.html#97">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/treeline-users">More information about the TreeLine-users
+mailing list</a><br>
+</body></html>

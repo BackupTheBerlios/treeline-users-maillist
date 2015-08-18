@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [TreeLine-users] Full Rewrite Status
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/treeline-users/2011-April/index.html" >
+   <LINK REL="made" HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20Full%20Rewrite%20Status&In-Reply-To=%3C20110415110816.GA4084%40bellz.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000148.html">
+   <LINK REL="Next"  HREF="000150.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[TreeLine-users] Full Rewrite Status</H1>
+    <B>Doug Bell</B> 
+    <A HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20Full%20Rewrite%20Status&In-Reply-To=%3C20110415110816.GA4084%40bellz.org%3E"
+       TITLE="[TreeLine-users] Full Rewrite Status">doug101 at bellz.org
+       </A><BR>
+    <I>Fri Apr 15 13:08:16 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000148.html">[TreeLine-users] 1.4.0: New Stable Release
+</A></li>
+        <LI>Next message: <A HREF="000150.html">[TreeLine-users] Full Rewrite Status
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#149">[ date ]</a>
+              <a href="thread.html#149">[ thread ]</a>
+              <a href="subject.html#149">[ subject ]</a>
+              <a href="author.html#149">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+As I've mentioned before, I'm slowly working on a full rewrite of
+TreeLine.  Hopefully, it will improve some structural limitations of the
+current version.
+
+This rewrite is very incomplete, not yet ready for regular use.  But I'm
+making the source code available for some users to try it to see where
+it's headed.  Trying this isn't for the faint of heart, since it is not
+neatly packaged (no installers or binaries) and requires some fairly
+recent libraries.
+
+If I haven't dissuaded you, go to &lt;<A HREF="https://bitbucket.org/">https://bitbucket.org/</A>&gt; and search
+for &quot;treeline&quot;.  From there, you can either use Mercurial to pull the
+source code or download an archive.
+
+The libraries needed to run this are more recent than the regular
+version of TreeLine.  You'll need Python 3.2, Qt 4.6 or greater, and
+PyQt 4.8 or greater.  On Linux, you might have to build PyQt yourself,
+since many distros don't package it for Python 3.2 yet.  On Windows,
+you'll need to do binary installs of Python and PyQt (which will
+include Qt).
+
+There are several structural changes that should make TreeLine run
+faster.  It uses Qt's model-view classes for the tree and uses
+ElementTree to parse the XML in stored files.  I've dropped the
+separation that excluded Qt from the core code (it doesn't make sense
+with model-view).  It uses a table-based Data Edit view, which is much
+faster and eliminates the need for the view to be paged.  Multiple views
+of the same file will update real-time.
+
+The TreeLine rewrite does not maintain full compatibility with the files
+from TreeLine 1.2.x or 1.4.x.  The basic structure is the same, so most
+data should be preserved, but there are some differences in
+formatting.  These differences will be most apparent on files with
+more complex formatting.
+
+The basic text field type is now a hybrid of the plain text field and
+the HTML field.  It preserves line breaks and allows HTML's restricted
+characters.  But it also allows formatting (bold, underline and italics
+so far) and internal and external links.
+
+The data edit view widgets are WYSIWYG for the new text fields.  There
+are also new entry widgets for dates and internal or external links.
+
+Each node now has a built-in unique ID that is generated from the
+contents of a reference field, with added suffixes if necessary to keep
+it unique.  It's updated as that field changes, and any internal links
+that point to it are automatically updated.
+
+The many features that are still missing include all file imports, all
+file exports, printing, searching, filtering, sorting, numbering,
+advanced formatting, some field types, customization, the plugin
+interface, etc.  Yes, I still have some work to do.
+
+If you do try this out, I'd appreciate hearing your feedback and
+suggestions.
+
+-Doug
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000148.html">[TreeLine-users] 1.4.0: New Stable Release
+</A></li>
+	<LI>Next message: <A HREF="000150.html">[TreeLine-users] Full Rewrite Status
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#149">[ date ]</a>
+              <a href="thread.html#149">[ thread ]</a>
+              <a href="subject.html#149">[ subject ]</a>
+              <a href="author.html#149">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/treeline-users">More information about the TreeLine-users
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [TreeLine-users] Data Lost - There goes my Todo list
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/treeline-users/2008-June/index.html" >
+   <LINK REL="made" HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20Data%20Lost%20-%20There%20goes%20my%20Todo%20list&In-Reply-To=%3C200806121438.16443.joe%40suse.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000025.html">
+   <LINK REL="Next"  HREF="000027.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[TreeLine-users] Data Lost - There goes my Todo list</H1>
+    <B>Joachim Werner</B> 
+    <A HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20Data%20Lost%20-%20There%20goes%20my%20Todo%20list&In-Reply-To=%3C200806121438.16443.joe%40suse.de%3E"
+       TITLE="[TreeLine-users] Data Lost - There goes my Todo list">joe at suse.de
+       </A><BR>
+    <I>Thu Jun 12 14:38:15 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000025.html">[TreeLine-users] Data Lost - There goes my Todo list
+</A></li>
+        <LI>Next message: <A HREF="000027.html">[TreeLine-users] New Stable Release - 1.2.0
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#26">[ date ]</a>
+              <a href="thread.html#26">[ thread ]</a>
+              <a href="subject.html#26">[ subject ]</a>
+              <a href="author.html#26">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+On Sonntag, 1. Juni 2008, John Stitzinger wrote:
+
+&gt;<i> Being able to sync to something like a  Subversion Server with revision
+</I>&gt;<i> control is a dream of mine.
+</I>
+This shouldn't be too hard to do. At SUSE we (mis)used a heavily patched 
+TreeLine for a while some years ago as a frontend to our feature tracking 
+SVN. All the features were separate files in SVN and were read/written back 
+by a patched implementation of TreeLines file open/save methods.
+
+Depending on whether you want a specific backend to be addressed (e.g. 
+Subversion) or just want to be able to go back in time on your personal 
+desktop, I'd choose different approaches.
+
+E.g. Mercurial, as a version control system written in Python, should be even 
+easier to integrate with TreeLine than Subversion.
+
+Back then when we used TreeLine with SVN the tricky part was merging if two 
+users wrote to the same nodes. That of course is only an issue if you 
+actually have more than one user or use the same backend from several 
+machines without always committing all changes immediately.
+
+Cheers
+
+Joachim
+
+
+-- 
+Joachim Werner &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/treeline-users">joe at suse.de</A>&gt;
+Senior Product Manager Outbound EMEA
+--
+SUSE LINUX Products GmbH, GF: Markus Rex, HRB 16746 (AG N&#252;rnberg)
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000025.html">[TreeLine-users] Data Lost - There goes my Todo list
+</A></li>
+	<LI>Next message: <A HREF="000027.html">[TreeLine-users] New Stable Release - 1.2.0
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#26">[ date ]</a>
+              <a href="thread.html#26">[ thread ]</a>
+              <a href="subject.html#26">[ subject ]</a>
+              <a href="author.html#26">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/treeline-users">More information about the TreeLine-users
+mailing list</a><br>
+</body></html>

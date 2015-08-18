@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [TreeLine-users] 1.3.0:  Unstable development snapshot
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/treeline-users/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%201.3.0%3A%20%20Unstable%20development%20snapshot&In-Reply-To=%3C20091015015403.GA827%40bellz.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000098.html">
+   <LINK REL="Next"  HREF="000100.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[TreeLine-users] 1.3.0:  Unstable development snapshot</H1>
+    <B>Doug Bell</B> 
+    <A HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%201.3.0%3A%20%20Unstable%20development%20snapshot&In-Reply-To=%3C20091015015403.GA827%40bellz.org%3E"
+       TITLE="[TreeLine-users] 1.3.0:  Unstable development snapshot">doug101 at bellz.org
+       </A><BR>
+    <I>Thu Oct 15 03:54:03 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000098.html">[TreeLine-users] 1.3.0:  Unstable development snapshot
+</A></li>
+        <LI>Next message: <A HREF="000100.html">[TreeLine-users] 1.3.0:  Unstable development snapshot
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#99">[ date ]</a>
+              <a href="thread.html#99">[ thread ]</a>
+              <a href="subject.html#99">[ subject ]</a>
+              <a href="author.html#99">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Tony B. Shepherd wrote:
+&gt;<i> Doug Bell wrote: { with lots of stuff clipped }
+</I>&gt;<i> &gt; Hi,
+</I>&gt;<i> 
+</I>&gt;<i> &gt; It's finally time for the first snapshot release in a new development
+</I>&gt;<i> &gt; cycle.  This release adds multiple-window capabilities, easier inline
+</I>&gt;<i> &gt; internal links, and a new HTML export option.
+</I>&gt;<i> 
+</I>&gt;<i> Thank you - although I must say it's a very nice package as is!
+</I>&gt;<i> 
+</I>&gt;<i> &gt; Please keep in mind that this snapshot is not complete and is probably
+</I>&gt;<i> &gt; buggy.  It should not be used for any critical work.  Feedback is
+</I>&gt;<i> &gt; appreciated.
+</I>&gt;<i> 
+</I>&gt;<i> Okay :)
+</I>&gt;<i> 
+</I>&gt;<i> &gt; New Features:
+</I>&gt;<i> 
+</I>&gt;<i> &gt;   - Multiple TreeLine windows with different files . . .
+</I>&gt;<i> Nice.
+</I>&gt;<i> 
+</I>&gt;<i> &gt;   - A &quot;Window&quot; menu has been added . . .
+</I>&gt;<i> Of course.
+</I>&gt;<i> 
+</I>&gt;<i> &gt;   - The &quot;Window-&gt;New Window&quot; command creates a new window with views of
+</I>&gt;<i> &gt;     the same TreeLine file. Changes in either window are saved in the
+</I>&gt;<i> &gt;     same document. This can be used to work in different sections of the
+</I>&gt;<i> &gt;     file simultaneously. For performance reasons, the non-active window
+</I>&gt;<i> &gt;     does not show the changes made in the active window until the
+</I>&gt;<i> &gt;     non-active window is focused.
+</I>&gt;<i> Can the &quot;not show changes&quot; behavior be an option?
+</I>
+I had planned to do a real-time update, but the performance was really
+terrible, even with relatively small files.  The problem is that
+TreeLine wasn't written for multiple windows, and it lacks fine-grained
+control of what actually needs to be updated in the second window.  It
+makes typing in an edit box so slow as to be really annoying.
+
+I do plan to fix this eventually, but it will be part of a much larger
+rewrite of the code in a future development cycle.
+
+&gt;<i> Or offer a &quot;re-calc&quot; keystroke (like spread sheets)?
+</I>
+I thought about that, but controlling it by focus seemed to be more
+natural.  So the the recalc command becomes either a click with the
+mouse or something like an alt-tab keystroke.  I could add a separate
+&quot;update duplicate windows&quot; command if users still want it after trying
+the focus change approach.
+
+&gt;<i> I can think of situations where seeing &quot;data output&quot; and &quot;data editor&quot; views
+</I>&gt;<i> at the same time could be pretty handy when making simple text changes.
+</I>&gt;<i> 
+</I>&gt;<i> Some and/or all advanced references (in the &quot;{**field_name*}&quot; syntax family)
+</I>&gt;<i> could be ignored for these situations until either the non-active window is
+</I>&gt;<i> focused, or the &quot;re-calc&quot; keystroke is entered.
+</I>
+The biggest problem seems to be the tree view, not the advanced
+references.
+
+&gt;<i> &gt;   - Starting TreeLine (from a shortcut, file association or command
+</I>&gt;<i> &gt;     line) will activate an existing TreeLine session if it is already
+</I>&gt;<i> &gt;     running. A new window will be opened if an unopened file was
+</I>&gt;<i> &gt;     specified by file association or in the command line.
+</I>&gt;<i> Can this behavior be an option as well?
+</I>&gt;<i> 
+</I>&gt;<i> I run multiple copies of several programs, for example, Firefox. Right now I
+</I>&gt;<i> have a FF window with news and stock portfolios, another on RV searches
+</I>&gt;<i> (doing homework for an ebay auction), and a third on hosting providers
+</I>&gt;<i> (changing providers soon I hope).  I often have three or four Tree Line
+</I>&gt;<i> files open for the same reason, and sometimes have the same file open more
+</I>&gt;<i> than once (yes, I know the risk) to eliminate &quot;tennis match neck&quot;.
+</I>&gt;<i> 
+</I>&gt;<i> In the &quot;good old days&quot; I'd have quite a few copies of simple text editors
+</I>&gt;<i> and such running at the same time, each working with it's own file. Any
+</I>&gt;<i> single mis-behaving program (or process) could be terminated with zero
+</I>&gt;<i> impact on the others.
+</I>&gt;<i> 
+</I>&gt;<i> Some apps (like FF) try to fake this (much like you propose) but only have
+</I>&gt;<i> one executable. I can appreciate this because of cache issues and so forth,
+</I>&gt;<i> but I don't see the need with Tree Line. FF can get &quot;stuck&quot; from time to
+</I>&gt;<i> time, and sometimes closing one window will work. Sometimes it doesn't :)
+</I>
+I'd be more worried about this if TreeLine crashed as often as most web
+browsers.  TreeLine is simpler than web browsers, and, in my experience,
+hard crashes are nearly non-existent if problems at initial startup are
+excluded.
+
+I'm reluctant to add an option that allows multiple executables again,
+since it would mean that one window wouldn't know what files another had
+open.  Since there is no file locking mechanism (cross-platform locking
+methods are more of a pain than they're worth), it doesn't stop one
+session from overwriting another.  I've had that happen when I have
+multiple TreeLine sessions in different workspaces.
+
+&gt;<i> Old habits die hard :) And I really hate &quot;single window&quot; programs like
+</I>&gt;<i> Quicken that actively prevent multiple views into the same data.
+</I>&gt;<i> 
+</I>&gt;<i> &gt;   - An &quot;Add internal link&quot; context menu has been added . . .
+</I>&gt;<i> That could be handy.
+</I>&gt;<i> 
+</I>&gt;<i> &gt;   - Added an &quot;HTML directory pages&quot; export option. This . . .
+</I>&gt;<i> Interesting. Not sure how I'd use it, but . . .
+</I>&gt;<i> 
+</I>&gt;<i> &gt; Updates:
+</I>&gt;<i> &gt; 
+</I>&gt;<i> &gt;   - The general options dialog has been split into three columns for
+</I>&gt;<i> &gt;     better viewing on small, wide displays.
+</I>&gt;<i> Great. Treeline is a bear on a little Linux netbook :)
+</I>&gt;<i> 
+</I>&gt;<i> &gt; Thanks for testing!
+</I>&gt;<i> Can't promise I will, but thanks for your continued interest!
+</I>
+Well, thanks for the feedback, anyway.
+
+Doug
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000098.html">[TreeLine-users] 1.3.0:  Unstable development snapshot
+</A></li>
+	<LI>Next message: <A HREF="000100.html">[TreeLine-users] 1.3.0:  Unstable development snapshot
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#99">[ date ]</a>
+              <a href="thread.html#99">[ thread ]</a>
+              <a href="subject.html#99">[ subject ]</a>
+              <a href="author.html#99">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/treeline-users">More information about the TreeLine-users
+mailing list</a><br>
+</body></html>

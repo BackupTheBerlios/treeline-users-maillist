@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [TreeLine-users] Long Output &amp; Data Extraction
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/treeline-users/2008-July/index.html" >
+   <LINK REL="made" HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20Long%20Output%20%26%20Data%20Extraction&In-Reply-To=%3C20080724015756.GA15482%40bellz.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000031.html">
+   <LINK REL="Next"  HREF="000034.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[TreeLine-users] Long Output &amp; Data Extraction</H1>
+    <B>Doug Bell</B> 
+    <A HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20Long%20Output%20%26%20Data%20Extraction&In-Reply-To=%3C20080724015756.GA15482%40bellz.org%3E"
+       TITLE="[TreeLine-users] Long Output &amp; Data Extraction">doug101 at bellz.org
+       </A><BR>
+    <I>Thu Jul 24 03:57:56 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000031.html">[TreeLine-users] New Stable Release - 1.2.0
+</A></li>
+        <LI>Next message: <A HREF="000034.html">[TreeLine-users] Long Output &amp; Data Extraction
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#32">[ date ]</a>
+              <a href="thread.html#32">[ thread ]</a>
+              <a href="subject.html#32">[ subject ]</a>
+              <a href="author.html#32">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Gavin Holt wrote:
+&gt;<i> This software is really very nice as it allows the collection of structured
+</I>&gt;<i> data in a portable environment, with encryption (important as I am a
+</I>&gt;<i> surgeon!). I have two questions: -
+</I>&gt;<i> 
+</I>&gt;<i> Is it possible to have multi-page output - for my &quot;boiler plate&quot; documents?
+</I>
+Yes, you can have multiple page output, but a single table can't span
+multiple pages.
+
+&gt;<i> I have copied a quite long HTML document into the &quot;output format window&quot; and
+</I>&gt;<i> inserted the desired field codes. The data output window displays the whole
+</I>&gt;<i> document beautifully, but when printing we get one page of the document and
+</I>&gt;<i> a blank page, there are normally three full pages of A4. Is there a
+</I>&gt;<i> pagination routine to parse the output before its sent to the printer? Is it
+</I>&gt;<i> my single large table (used for three column formatting) which is causing
+</I>&gt;<i> the problem?
+</I>
+Yes.  TreeLine's HTML engine isn't smart enough to insert page breaks
+inside tables.  It tries to keep tables together, but that causes
+problems when a single table is larger than a full page.  I might be
+able to fix this in the future, but it won't be anytime soon.
+
+There are some possible work-arounds, but none that give you quite
+what you want:
+
+  - Export the file to HTML, then use a web browser to print it.
+
+  - Make each node its own table by replacing the Sibling Prefix/Suffix
+    tags with tags in the node output.  Unfortunately, this will cause
+    the columns to be misaligned.
+
+  - Create a spacer node type to act as a page break.  It should just
+    have a non-breaking space character (&nbsp;) as its only output.
+    Because they don't have Sibling Prefix/Suffix tags, these spacer
+    nodes would interrupt the big table, allowing TreeLine to break the
+    page at those locations.  But finding the right places for these
+    nodes would be guess-work.
+
+  - Replace the table with an output scheme that just uses text.
+
+Sorry that I don't have better options.
+
+&gt;<i> Once a large amount of data is accumulated in a *.trl, is there a way of
+</I>&gt;<i> extracting just the data with &quot;relationships&quot;
+</I>&gt;<i> 
+</I>&gt;<i> I need to audit my results and therefore want to run queries against data
+</I>&gt;<i> files. e.g. Number of patients with &quot;Total Hip Replacement&quot; as a child type,
+</I>&gt;<i> and Number of Patients with &quot;Total Hip Replacement&quot; as a child type where
+</I>&gt;<i> &quot;Infection&quot; is listed in the complications field.
+</I>&gt;<i> As you can see I really need to be able to export just the data as a set of
+</I>&gt;<i> linked tables. In the spirit of multi platform OS independence any well
+</I>&gt;<i> supported data file format (that will link to Access) would be great!! I
+</I>&gt;<i> don't have the expertise to walk the xml for myself - sorry.
+</I>
+I can't think of a way to do this.  TreeLine can export to a
+tab-delimited text file, but only with a single level of data (the
+children of the selected node, not the grandchildren).  The closest you
+could come would be to use either the &quot;Flatten by Category&quot; command or
+to add child reference fields prior to export, but neither looks like a
+good option in this case.
+
+Doug.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000031.html">[TreeLine-users] New Stable Release - 1.2.0
+</A></li>
+	<LI>Next message: <A HREF="000034.html">[TreeLine-users] Long Output &amp; Data Extraction
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#32">[ date ]</a>
+              <a href="thread.html#32">[ thread ]</a>
+              <a href="subject.html#32">[ subject ]</a>
+              <a href="author.html#32">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/treeline-users">More information about the TreeLine-users
+mailing list</a><br>
+</body></html>

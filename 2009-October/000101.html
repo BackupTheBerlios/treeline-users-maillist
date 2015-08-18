@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [TreeLine-users] 1.3.0:  Unstable development snapshot
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/treeline-users/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%201.3.0%3A%20%20Unstable%20development%20snapshot&In-Reply-To=%3C20091016011931.GB9288%40bellz.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000100.html">
+   <LINK REL="Next"  HREF="000102.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[TreeLine-users] 1.3.0:  Unstable development snapshot</H1>
+    <B>Doug Bell</B> 
+    <A HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%201.3.0%3A%20%20Unstable%20development%20snapshot&In-Reply-To=%3C20091016011931.GB9288%40bellz.org%3E"
+       TITLE="[TreeLine-users] 1.3.0:  Unstable development snapshot">doug101 at bellz.org
+       </A><BR>
+    <I>Fri Oct 16 03:19:31 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000100.html">[TreeLine-users] 1.3.0:  Unstable development snapshot
+</A></li>
+        <LI>Next message: <A HREF="000102.html">[TreeLine-users] Treeline dies when trying to save or open a file (SLED 11, OpenSUSE 11.1)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#101">[ date ]</a>
+              <a href="thread.html#101">[ thread ]</a>
+              <a href="subject.html#101">[ subject ]</a>
+              <a href="author.html#101">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Tony B. Shepherd wrote:
+&gt;<i> Doug Bell wrote: {and we clipped some more :) }
+</I>&gt;<i> &gt; Tony B. Shepherd wrote:
+</I>&gt;<i> &gt;&gt; Doug Bell wrote: { with lots of stuff clipped }
+</I>&gt;<i> 
+</I>&gt;<i> +++++ Dual views of same file
+</I>&gt;<i> &gt;&gt;&gt;   - The &quot;Window-&gt;New Window&quot; command creates a new window with views of
+</I>&gt;<i> &gt;&gt;&gt;     the same TreeLine file. Changes in either window are saved in the
+</I>&gt;<i> &gt;&gt;&gt;     same document. This can be used to work in different sections of the
+</I>&gt;<i> &gt;&gt;&gt;     file simultaneously. For performance reasons, the non-active window
+</I>&gt;<i> &gt;&gt;&gt;     does not show the changes made in the active window until the
+</I>&gt;<i> &gt;&gt;&gt;     non-active window is focused.
+</I>&gt;<i> &gt;&gt; Can the &quot;not show changes&quot; behavior be an option?
+</I>&gt;<i>   { skip }
+</I>&gt;<i> &gt;&gt; I can think of situations where seeing &quot;data output&quot; and &quot;data editor&quot; views
+</I>&gt;<i> &gt;&gt; at the same time could be pretty handy when making simple text changes.
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; Some and/or all advanced references (in the &quot;{**field_name*}&quot; syntax family)
+</I>&gt;<i> &gt;&gt; could be ignored for these situations until either the non-active window is
+</I>&gt;<i> &gt;&gt; focused, or the &quot;re-calc&quot; keystroke is entered.
+</I>&gt;<i> &gt; 
+</I>&gt;<i> &gt; The biggest problem seems to be the tree view, not the advanced
+</I>&gt;<i> &gt; references.
+</I>&gt;<i> 
+</I>&gt;<i> Understood. Could the non-active window only show changes in (it's) current
+</I>&gt;<i> (on-screen) node (the text part perhaps)?
+</I>
+Maybe, I'd have to try it to check how responsive it is.  And a partial
+update might tend to confuse users more than no update...
+
+&gt;<i> +++++ Multiple processes
+</I>&gt;<i> &gt;&gt;&gt;   - Starting TreeLine (from a shortcut, file association or command
+</I>&gt;<i> &gt;&gt;&gt;     line) will activate an existing TreeLine session if it is already
+</I>&gt;<i> &gt;&gt;&gt;     running. A new window will be opened if an unopened file was
+</I>&gt;<i> &gt;&gt;&gt;     specified by file association or in the command line.
+</I>&gt;<i> &gt;&gt; Can this behavior be an option as well?
+</I>&gt;<i>   { skip }
+</I>&gt;<i> &gt;&gt; In the &quot;good old days&quot; I'd have quite a few copies of simple text editors
+</I>&gt;<i> &gt;&gt; and such running at the same time, each working with it's own file. Any
+</I>&gt;<i> &gt;&gt; single mis-behaving program (or process) could be terminated with zero
+</I>&gt;<i> &gt;&gt; impact on the others.
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; Some apps (like FF) try to fake this (much like you propose) but only have
+</I>&gt;<i> &gt;&gt; one executable. I can appreciate this because of cache issues and so forth,
+</I>&gt;<i> &gt;&gt; but I don't see the need with Tree Line. FF can get &quot;stuck&quot; from time to
+</I>&gt;<i> &gt;&gt; time, and sometimes closing one window will work. Sometimes it doesn't :)
+</I>&gt;<i> &gt; 
+</I>&gt;<i> &gt; I'd be more worried about this if TreeLine crashed as often as most web
+</I>&gt;<i> &gt; browsers.  TreeLine is simpler than web browsers, and, in my experience,
+</I>&gt;<i> &gt; hard crashes are nearly non-existent if problems at initial startup are
+</I>&gt;<i> &gt; excluded.
+</I>&gt;<i> &gt; 
+</I>&gt;<i> &gt; I'm reluctant to add an option that allows multiple executables again,
+</I>&gt;<i> &gt; since it would mean that one window wouldn't know what files another had
+</I>&gt;<i> &gt; open.  Since there is no file locking mechanism (cross-platform locking
+</I>&gt;<i> &gt; methods are more of a pain than they're worth), it doesn't stop one
+</I>&gt;<i> &gt; session from overwriting another.  I've had that happen when I have
+</I>&gt;<i> &gt; multiple TreeLine sessions in different workspaces.
+</I>&gt;<i> 
+</I>&gt;<i> Understood, and awareness within a process is a good thing (tm). Consider
+</I>&gt;<i> this scenario of opened and modified (TreeLine) files:
+</I>&gt;<i>  *) c:\file1.trl
+</I>&gt;<i>  *) c:\file1.trl (a second window)
+</I>&gt;<i>  *) l:\file2.trl (on another computer)
+</I>&gt;<i> 
+</I>&gt;<i> Crash the remote computer. What happens? Obviously L: changes are lost. But
+</I>&gt;<i> did the process survive? (Have we lost all changes to C: file as well?)
+</I>
+I don't think it matters where the file was stored.  TreeLine will give
+an error if you try to save the file to a crashed remote drive, but
+TreeLine won't crash.  I also don't think TreeLine would crash if the
+drive containing TreeLine's excutable crashed, since it is already in
+memory, but I haven't actually tested that.
+
+I can't think of many scenarios where one combined session would lose
+more work than separate sessions.
+
+&gt;<i> +++++ Didn't sound right :(
+</I>&gt;<i> &gt;&gt;&gt; Thanks for testing!
+</I>&gt;<i> &gt;&gt; Can't promise I will, but thanks for your continued interest!
+</I>&gt;<i> &gt; Well, thanks for the feedback, anyway.
+</I>&gt;<i> 
+</I>&gt;<i> Sorry - I was referring to my crowded calendar, and didn't mean to sound
+</I>&gt;<i> like my nose was in a knot :)
+</I>
+That's OK - I didn't take it wrongly.
+
+&gt;<i> I'll take it out for a walk if I can, but I'm
+</I>&gt;<i> not sure I can do meaningful (helpful) testing.
+</I>
+OK.
+
+Doug
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000100.html">[TreeLine-users] 1.3.0:  Unstable development snapshot
+</A></li>
+	<LI>Next message: <A HREF="000102.html">[TreeLine-users] Treeline dies when trying to save or open a file (SLED 11, OpenSUSE 11.1)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#101">[ date ]</a>
+              <a href="thread.html#101">[ thread ]</a>
+              <a href="subject.html#101">[ subject ]</a>
+              <a href="author.html#101">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/treeline-users">More information about the TreeLine-users
+mailing list</a><br>
+</body></html>

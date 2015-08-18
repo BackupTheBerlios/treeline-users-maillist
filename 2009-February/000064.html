@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [TreeLine-users] TreeLine port for MacPorts
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/treeline-users/2009-February/index.html" >
+   <LINK REL="made" HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20TreeLine%20port%20for%20MacPorts&In-Reply-To=%3C20090226122545.GB10668%40bellz.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000062.html">
+   <LINK REL="Next"  HREF="000063.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[TreeLine-users] TreeLine port for MacPorts</H1>
+    <B>Doug Bell</B> 
+    <A HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20TreeLine%20port%20for%20MacPorts&In-Reply-To=%3C20090226122545.GB10668%40bellz.org%3E"
+       TITLE="[TreeLine-users] TreeLine port for MacPorts">doug101 at bellz.org
+       </A><BR>
+    <I>Thu Feb 26 13:25:45 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000062.html">[TreeLine-users] TreeLine port for MacPorts
+</A></li>
+        <LI>Next message: <A HREF="000063.html">[TreeLine-users] Treeline  feature request
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#64">[ date ]</a>
+              <a href="thread.html#64">[ thread ]</a>
+              <a href="subject.html#64">[ subject ]</a>
+              <a href="author.html#64">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Adam Byrtek wrote:
+&gt;<i> I've just submitted a TreeLine port for MacPorts - a ports-based
+</I>&gt;<i> source distribution for Macs. It is not yet available in the
+</I>&gt;<i> repository, but can be found in the ticket:
+</I>&gt;<i> <A HREF="http://trac.macports.org/ticket/18626">http://trac.macports.org/ticket/18626</A>
+</I>&gt;<i> 
+</I>&gt;<i> There was only one system-dependent patch I had to make, I had to
+</I>&gt;<i> disable saving of window geometry on exit. The reason for this is that
+</I>&gt;<i> when this setting is enabled and TreeLine is run for the first time,
+</I>&gt;<i> it assumes default X/Y coordinates of 0x0. In this case on Mac the
+</I>&gt;<i> title bar is hidden beneath the OS menu bar and cannot be activated at
+</I>&gt;<i> all. Let me know if this is clear enough, if not I can provide a
+</I>&gt;<i> screenshot.
+</I>&gt;<i> 
+</I>&gt;<i> Maybe it would be wiser to leave the decision to the window manager
+</I>&gt;<i> instead of fixing the window to a default position when the geometry
+</I>&gt;<i> is unknown?
+</I>
+That makes sense.  I'll probably set the initial value for the position
+to something like (-1, -1), which will be ignored until it's overwritten
+with a real position.  I wonder if negatives (slightly offscreen) should
+ever be valid positions?  The current version of TreeLine does ignore
+them.
+
+I'm not sure whether I'll do this in a bugfix release or wait for the
+next unstable development series.
+
+Doug.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000062.html">[TreeLine-users] TreeLine port for MacPorts
+</A></li>
+	<LI>Next message: <A HREF="000063.html">[TreeLine-users] Treeline  feature request
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#64">[ date ]</a>
+              <a href="thread.html#64">[ thread ]</a>
+              <a href="subject.html#64">[ subject ]</a>
+              <a href="author.html#64">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/treeline-users">More information about the TreeLine-users
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [TreeLine-users] 1.3.0:  Unstable development snapshot
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/treeline-users/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%201.3.0%3A%20%20Unstable%20development%20snapshot&In-Reply-To=%3C4AD7697A.6070203%40nashobavillage.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000099.html">
+   <LINK REL="Next"  HREF="000101.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[TreeLine-users] 1.3.0:  Unstable development snapshot</H1>
+    <B>Tony B. Shepherd</B> 
+    <A HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%201.3.0%3A%20%20Unstable%20development%20snapshot&In-Reply-To=%3C4AD7697A.6070203%40nashobavillage.net%3E"
+       TITLE="[TreeLine-users] 1.3.0:  Unstable development snapshot">tbs at nashobavillage.net
+       </A><BR>
+    <I>Thu Oct 15 20:27:06 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000099.html">[TreeLine-users] 1.3.0:  Unstable development snapshot
+</A></li>
+        <LI>Next message: <A HREF="000101.html">[TreeLine-users] 1.3.0:  Unstable development snapshot
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#100">[ date ]</a>
+              <a href="thread.html#100">[ thread ]</a>
+              <a href="subject.html#100">[ subject ]</a>
+              <a href="author.html#100">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Doug Bell wrote: {and we clipped some more :) }
+&gt;<i> Tony B. Shepherd wrote:
+</I>&gt;&gt;<i> Doug Bell wrote: { with lots of stuff clipped }
+</I>
++++++ Dual views of same file
+&gt;&gt;&gt;<i>   - The &quot;Window-&gt;New Window&quot; command creates a new window with views of
+</I>&gt;&gt;&gt;<i>     the same TreeLine file. Changes in either window are saved in the
+</I>&gt;&gt;&gt;<i>     same document. This can be used to work in different sections of the
+</I>&gt;&gt;&gt;<i>     file simultaneously. For performance reasons, the non-active window
+</I>&gt;&gt;&gt;<i>     does not show the changes made in the active window until the
+</I>&gt;&gt;&gt;<i>     non-active window is focused.
+</I>&gt;&gt;<i> Can the &quot;not show changes&quot; behavior be an option?
+</I>  { skip }
+&gt;&gt;<i> I can think of situations where seeing &quot;data output&quot; and &quot;data editor&quot; views
+</I>&gt;&gt;<i> at the same time could be pretty handy when making simple text changes.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Some and/or all advanced references (in the &quot;{**field_name*}&quot; syntax family)
+</I>&gt;&gt;<i> could be ignored for these situations until either the non-active window is
+</I>&gt;&gt;<i> focused, or the &quot;re-calc&quot; keystroke is entered.
+</I>&gt;<i> 
+</I>&gt;<i> The biggest problem seems to be the tree view, not the advanced
+</I>&gt;<i> references.
+</I>
+Understood. Could the non-active window only show changes in (it's) current
+(on-screen) node (the text part perhaps)?
+
++++++ Multiple processes
+&gt;&gt;&gt;<i>   - Starting TreeLine (from a shortcut, file association or command
+</I>&gt;&gt;&gt;<i>     line) will activate an existing TreeLine session if it is already
+</I>&gt;&gt;&gt;<i>     running. A new window will be opened if an unopened file was
+</I>&gt;&gt;&gt;<i>     specified by file association or in the command line.
+</I>&gt;&gt;<i> Can this behavior be an option as well?
+</I>  { skip }
+&gt;&gt;<i> In the &quot;good old days&quot; I'd have quite a few copies of simple text editors
+</I>&gt;&gt;<i> and such running at the same time, each working with it's own file. Any
+</I>&gt;&gt;<i> single mis-behaving program (or process) could be terminated with zero
+</I>&gt;&gt;<i> impact on the others.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Some apps (like FF) try to fake this (much like you propose) but only have
+</I>&gt;&gt;<i> one executable. I can appreciate this because of cache issues and so forth,
+</I>&gt;&gt;<i> but I don't see the need with Tree Line. FF can get &quot;stuck&quot; from time to
+</I>&gt;&gt;<i> time, and sometimes closing one window will work. Sometimes it doesn't :)
+</I>&gt;<i> 
+</I>&gt;<i> I'd be more worried about this if TreeLine crashed as often as most web
+</I>&gt;<i> browsers.  TreeLine is simpler than web browsers, and, in my experience,
+</I>&gt;<i> hard crashes are nearly non-existent if problems at initial startup are
+</I>&gt;<i> excluded.
+</I>&gt;<i> 
+</I>&gt;<i> I'm reluctant to add an option that allows multiple executables again,
+</I>&gt;<i> since it would mean that one window wouldn't know what files another had
+</I>&gt;<i> open.  Since there is no file locking mechanism (cross-platform locking
+</I>&gt;<i> methods are more of a pain than they're worth), it doesn't stop one
+</I>&gt;<i> session from overwriting another.  I've had that happen when I have
+</I>&gt;<i> multiple TreeLine sessions in different workspaces.
+</I>
+Understood, and awareness within a process is a good thing (tm). Consider
+this scenario of opened and modified (TreeLine) files:
+ *) c:\file1.trl
+ *) c:\file1.trl (a second window)
+ *) l:\file2.trl (on another computer)
+
+Crash the remote computer. What happens? Obviously L: changes are lost. But
+did the process survive? (Have we lost all changes to C: file as well?)
+
++++++ Didn't sound right :(
+&gt;&gt;&gt;<i> Thanks for testing!
+</I>&gt;&gt;<i> Can't promise I will, but thanks for your continued interest!
+</I>&gt;<i> Well, thanks for the feedback, anyway.
+</I>
+Sorry - I was referring to my crowded calendar, and didn't mean to sound
+like my nose was in a knot :) I'll take it out for a walk if I can, but I'm
+not sure I can do meaningful (helpful) testing.
+
+Again, thanks for a very nice package.
+-- 
+Regards  --  Tony B. Shepherd  --  <A HREF="https://lists.berlios.de/mailman/listinfo/treeline-users">tbs at nashobavillage.net</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000099.html">[TreeLine-users] 1.3.0:  Unstable development snapshot
+</A></li>
+	<LI>Next message: <A HREF="000101.html">[TreeLine-users] 1.3.0:  Unstable development snapshot
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#100">[ date ]</a>
+              <a href="thread.html#100">[ thread ]</a>
+              <a href="subject.html#100">[ subject ]</a>
+              <a href="author.html#100">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/treeline-users">More information about the TreeLine-users
+mailing list</a><br>
+</body></html>

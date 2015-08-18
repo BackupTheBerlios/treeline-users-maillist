@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [TreeLine-users] Bug? 1.2.0: Cannot open Unicode filename
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/treeline-users/2008-October/index.html" >
+   <LINK REL="made" HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20Bug%3F%201.2.0%3A%20Cannot%20open%20Unicode%20filename&In-Reply-To=%3C48FEA85D.4060307%40seznam.cz%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000039.html">
+   <LINK REL="Next"  HREF="000041.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[TreeLine-users] Bug? 1.2.0: Cannot open Unicode filename</H1>
+    <B>Tomas Valusek</B> 
+    <A HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20Bug%3F%201.2.0%3A%20Cannot%20open%20Unicode%20filename&In-Reply-To=%3C48FEA85D.4060307%40seznam.cz%3E"
+       TITLE="[TreeLine-users] Bug? 1.2.0: Cannot open Unicode filename">tvalusek at seznam.cz
+       </A><BR>
+    <I>Wed Oct 22 06:13:17 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000039.html">[TreeLine-users] Bug? 1.2.0: Cannot open Unicode filename
+</A></li>
+        <LI>Next message: <A HREF="000041.html">[TreeLine-users] Bug? 1.2.0: Cannot open Unicode filename
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#40">[ date ]</a>
+              <a href="thread.html#40">[ thread ]</a>
+              <a href="subject.html#40">[ subject ]</a>
+              <a href="author.html#40">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello,
+
+I confirm this bug. There's a problem with handling accented characters 
+appearing anywhere in file path while opening a file with TreeLine by 
+opening it in Explorer.
+
+Tomas Valusek
+
+Yukio Shiiya napsal(a):
+&gt;<i> Hi,
+</I>&gt;<i> 
+</I>&gt;<i> First of all, sorry for my poor English.
+</I>&gt;<i> 
+</I>&gt;<i> TreeLine 1.2.0 on Windows can save the file with a filename using the
+</I>&gt;<i> Unicode, but when trying to open the file after closing it, an error
+</I>&gt;<i> occurs and cannot open it.
+</I>&gt;<i> 
+</I>&gt;<i> Steps to reproduce the symptom is shown below.
+</I>&gt;<i> 
+</I>&gt;<i> 1. Run TreeLine.
+</I>&gt;<i> 
+</I>&gt;<i> 2. Select [File]-[New] from menu bar.
+</I>&gt;<i> 
+</I>&gt;<i> 3. Select &quot;Default - No template&quot; as template.
+</I>&gt;<i> 
+</I>&gt;<i> 4. Without editing anything, select [File]-[Save As] from menu bar.
+</I>&gt;<i> 
+</I>&gt;<i> 5. Specify an arbitrary directory (ex. C:\) as the location to save the
+</I>&gt;<i> file, and specify an arbitrary filename using the Unicode (ex. &#12486;&#12473;&#12488;.trl
+</I>&gt;<i> (&quot;&#12486;&#12473;&#12488;&quot; means &quot;test&quot; in Japanese.)), and click the [Save] button.
+</I>&gt;<i> 
+</I>&gt;<i> No error occurs then, and the file can be saved normally.
+</I>&gt;<i> 
+</I>&gt;<i> 6. Quit TreeLine.
+</I>&gt;<i> 
+</I>&gt;<i> 7. Open the file with a Unicode filename saved a while ago by
+</I>&gt;<i> double-click.
+</I>&gt;<i> 
+</I>&gt;<i> However, the following error occurs and cannot open the file.
+</I>&gt;<i> 
+</I>&gt;&gt;<i> Errors occurred
+</I>&gt;&gt;<i> See the logfile 'E:\Program Files\TreeLine\lib\treeline.exe.log' for details
+</I>&gt;<i> 
+</I>&gt;<i> And the traceback outputted to the treeline.exe.log at this time is as
+</I>&gt;<i> follows:
+</I>&gt;<i> 
+</I>&gt;&gt;<i> Traceback (most recent call last):
+</I>&gt;&gt;<i>   File &quot;treeline.py&quot;, line 164, in &lt;module&gt;
+</I>&gt;&gt;<i>   File &quot;treeline.py&quot;, line 155, in main
+</I>&gt;&gt;<i>   File &quot;treemainwin.pyc&quot;, line 527, in openFile
+</I>&gt;&gt;<i>   File &quot;treemainwin.pyc&quot;, line 692, in autoSaveFilePath
+</I>&gt;&gt;<i> UnicodeDecodeError: 'ascii' codec can't decode byte 0x83 in position 3: ordinal not in range(128)
+</I>&gt;<i> 
+</I>&gt;<i> Guessing from this traceback, it seems that the internal filename code
+</I>&gt;<i> conversion has failed.
+</I>&gt;<i> Then, after changing the filename saved a while ago into the filename
+</I>&gt;<i> NOT using the Unicode (ex. test.trl), when double-click it, the file was
+</I>&gt;<i> opened successfully this time.
+</I>&gt;<i> 
+</I>&gt;<i> I installed the source code of TreeLine and read it a little.
+</I>&gt;<i> However, as I am not familiar with Python, I was not able to find out a
+</I>&gt;<i> cause.
+</I>&gt;<i> 
+</I>&gt;<i> Could you resolve this symptom?
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Finally, my environment is shown below.
+</I>&gt;<i>   OS       : WinXP Pro SP3 (Japanese Edition)
+</I>&gt;<i>   TreeLine : 1.2.0 (Downloaded from BerliOS)
+</I>&gt;<i> 
+</I>&gt;<i> Thanks,
+</I>&gt;<i> 
+</I>&gt;<i> --
+</I>&gt;<i> Yukio Shiiya &lt;shiiya @ sky.email.ne.jp&gt;
+</I>&gt;<i> 
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> TreeLine-users mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/treeline-users">TreeLine-users at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/treeline-users">https://lists.berlios.de/mailman/listinfo/treeline-users</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000039.html">[TreeLine-users] Bug? 1.2.0: Cannot open Unicode filename
+</A></li>
+	<LI>Next message: <A HREF="000041.html">[TreeLine-users] Bug? 1.2.0: Cannot open Unicode filename
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#40">[ date ]</a>
+              <a href="thread.html#40">[ thread ]</a>
+              <a href="subject.html#40">[ subject ]</a>
+              <a href="author.html#40">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/treeline-users">More information about the TreeLine-users
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [TreeLine-users] Saving relative paths
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/treeline-users/2011-April/index.html" >
+   <LINK REL="made" HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20Saving%20relative%20paths&In-Reply-To=%3C20110413020349.GA5417%40bellz.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000141.html">
+   <LINK REL="Next"  HREF="000146.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[TreeLine-users] Saving relative paths</H1>
+    <B>Doug Bell</B> 
+    <A HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20Saving%20relative%20paths&In-Reply-To=%3C20110413020349.GA5417%40bellz.org%3E"
+       TITLE="[TreeLine-users] Saving relative paths">doug101 at bellz.org
+       </A><BR>
+    <I>Wed Apr 13 04:03:50 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000141.html">[TreeLine-users] Saving relative paths
+</A></li>
+        <LI>Next message: <A HREF="000146.html">[TreeLine-users] Saving relative paths
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#144">[ date ]</a>
+              <a href="thread.html#144">[ thread ]</a>
+              <a href="subject.html#144">[ subject ]</a>
+              <a href="author.html#144">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Matthijs Kooijman wrote:
+&gt;<i> Hi folks,
+</I>&gt;<i> 
+</I>&gt;<i> I'm using Treeline to keep track of my incoming and outgoing (snail)
+</I>&gt;<i> mail, so I have a &quot;Path&quot; typed field that points to a scanned pdf
+</I>&gt;<i> version of received and sent letters.
+</I>&gt;<i> 
+</I>&gt;<i> I'm planning to use this treeline file from multiple computers (by
+</I>&gt;<i> syncing to and from a network share), but I expect problems with the
+</I>&gt;<i> absolute paths that are in the datafile (haven't actually tried,
+</I>&gt;<i> though).
+</I>&gt;<i> 
+</I>&gt;<i> Is there a way to make Treeline save relative paths (all linked files
+</I>&gt;<i> are below the parent dir of the treeline document) instead of absoluate
+</I>&gt;<i> path?
+</I>&gt;<i> 
+</I>&gt;<i> It actually seems that resolving relative paths is already supported for
+</I>&gt;<i> &quot;Picture&quot; typed fields, but not for &quot;Path&quot; typed fields (also, when
+</I>&gt;<i> using the filebrowser to set a &quot;Picture&quot; typed field, an absolute path
+</I>&gt;<i> is still put into the field.
+</I>&gt;<i> 
+</I>&gt;<i> Would it make sense to:
+</I>&gt;<i>  * Support relative paths in &quot;Path&quot; fields?
+</I>&gt;<i>  * Add an option to &quot;Path&quot; and &quot;Picture&quot; typed fields: &quot;Use relative
+</I>&gt;<i>    paths: never / always / only for files below the .trl file&quot; ?
+</I>
+The difference between the Path and Picture fields is that the Path
+field uses the &quot;<A HREF="file://">file://</A>&quot; protocol internally, which does not support
+relative paths.
+
+It's too late to change this in the current development series, but I'll
+think about how it might be fixed in the upcoming full rewrite.
+
+-Doug
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000141.html">[TreeLine-users] Saving relative paths
+</A></li>
+	<LI>Next message: <A HREF="000146.html">[TreeLine-users] Saving relative paths
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#144">[ date ]</a>
+              <a href="thread.html#144">[ thread ]</a>
+              <a href="subject.html#144">[ subject ]</a>
+              <a href="author.html#144">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/treeline-users">More information about the TreeLine-users
+mailing list</a><br>
+</body></html>

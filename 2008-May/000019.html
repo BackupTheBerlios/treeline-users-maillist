@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [TreeLine-users] Data Lost - There goes my Todo list
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/treeline-users/2008-May/index.html" >
+   <LINK REL="made" HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20Data%20Lost%20-%20There%20goes%20my%20Todo%20list&In-Reply-To=%3C483D6C75.6060206%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000017.html">
+   <LINK REL="Next"  HREF="000022.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[TreeLine-users] Data Lost - There goes my Todo list</H1>
+    <B>R Labaza</B> 
+    <A HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20Data%20Lost%20-%20There%20goes%20my%20Todo%20list&In-Reply-To=%3C483D6C75.6060206%40gmail.com%3E"
+       TITLE="[TreeLine-users] Data Lost - There goes my Todo list">rlabaza at gmail.com
+       </A><BR>
+    <I>Wed May 28 16:30:13 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000017.html">[TreeLine-users] Data Lost - There goes my Todo list
+</A></li>
+        <LI>Next message: <A HREF="000022.html">[TreeLine-users] Data Lost - There goes my Todo list
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19">[ date ]</a>
+              <a href="thread.html#19">[ thread ]</a>
+              <a href="subject.html#19">[ subject ]</a>
+              <a href="author.html#19">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Doug Bell wrote:
+&gt;<i> John Stitzinger wrote:
+</I>&gt;&gt;<i> Since there hasn't been any traffic to the mailing list in a long
+</I>&gt;&gt;<i> time, I thought I would post here rather than just submitting a bug
+</I>&gt;&gt;<i> report.
+</I>&gt;<i> 
+</I>&gt;<i> This is a good place for it.  It lets other users know about the issue.
+</I>&gt;<i> 
+</I>&gt;&gt;<i> I first have to give a quick - I really appreciate Treeline and my
+</I>&gt;&gt;<i> life depends on it mention and thanks to Doug.  I have ~1390 items in
+</I>&gt;&gt;<i> my todo  list so you can imagine how  dependent I am on it.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Hopefully I can help others avoid the trauma I am going through today!
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> It seems that if you create a empty .trl~ file named the same as your
+</I>&gt;&gt;<i> .trl file, when Treeline starts it will do the normal thing of asking
+</I>&gt;&gt;<i> if you want to restore your backup.  Of course you say yes because
+</I>&gt;&gt;<i> that is what you always do (I'm running 1.0.2 and another bug gets me
+</I>&gt;&gt;<i> occasionally).  Treeline instantly deletes the original (good but
+</I>&gt;&gt;<i> slightly old) file and then asks what to do with the empty file.  No
+</I>&gt;&gt;<i> matter what you answer you are left with a empty Tree.  How can
+</I>&gt;&gt;<i> something like this happen in real life you ask?  I've had windows
+</I>&gt;&gt;<i> hang while suspending and I've had to power off the machine.  If a
+</I>&gt;&gt;<i> Treeline file is open I've ended up with a .trl~ file that was full of
+</I>&gt;&gt;<i> nulls (the same size as the .trl~ file would normally be).
+</I>&gt;<i> 
+</I>&gt;<i> I can't reproduce the problem that lead to a backup file full of nulls.
+</I>&gt;<i> Maybe the file system was trying to write it precisely when the PC died.
+</I>&gt;<i>
+</I>
+I have experienced the same problem for several years, but have learned 
+to select 'NO' to restoring the backup.  I have gotten into the habit to 
+  save my data after making any changes to avoid this problem.  I did 
+not see the problem related to system suspend or crash, but rather it 
+seemed related to leaving Treeline open for a period of time longer than 
+the autosave duration without saving.  I will try to fill in these 
+details and come up with a recreate scenario on my system.
+rl.
+
+&gt;&gt;<i> Perhaps something to consider would be to simply not delete the
+</I>&gt;&gt;<i> original .trl file.   If the Treeline file needs to be rewritten for
+</I>&gt;&gt;<i> Treeline to continue working then it should only be deleted after a
+</I>&gt;&gt;<i> Well Formed and Valid XML file is read in.  Treeline should probably
+</I>&gt;&gt;<i> only accept .trl files as backup.  I can't think of any reason to have
+</I>&gt;&gt;<i> the flexibility of reading in any type of files as a .trl~ backup file
+</I>&gt;&gt;<i> but if there is, a warning prompt could be given for non .trl~  format
+</I>&gt;&gt;<i> backup files.  There maybe something that can be done to make the
+</I>&gt;&gt;<i> writing of the .trl~ backup file more robust  (I don't know anything
+</I>&gt;&gt;<i> about Windows File Internals so I can't  be of any help there).
+</I>&gt;&gt;<i> Perhaps the original file could be put in the Recycle Bin rather than
+</I>&gt;&gt;<i> just deleted.
+</I>&gt;<i> 
+</I>&gt;<i> I'll look at making a change.  At the very least it should make sure a
+</I>&gt;<i> valid TreeLine backup file is read before replacing the original file.
+</I>&gt;<i> 
+</I>&gt;<i> Doug.
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> TreeLine-users mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/treeline-users">TreeLine-users at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/treeline-users">https://lists.berlios.de/mailman/listinfo/treeline-users</A>
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000017.html">[TreeLine-users] Data Lost - There goes my Todo list
+</A></li>
+	<LI>Next message: <A HREF="000022.html">[TreeLine-users] Data Lost - There goes my Todo list
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19">[ date ]</a>
+              <a href="thread.html#19">[ thread ]</a>
+              <a href="subject.html#19">[ subject ]</a>
+              <a href="author.html#19">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/treeline-users">More information about the TreeLine-users
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [TreeLine-users] Long Output &amp; Data Extraction
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/treeline-users/2008-July/index.html" >
+   <LINK REL="made" HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20Long%20Output%20%26%20Data%20Extraction&In-Reply-To=%3C200807251305.41333.joe%40suse.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000032.html">
+   <LINK REL="Next"  HREF="000035.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[TreeLine-users] Long Output &amp; Data Extraction</H1>
+    <B>Joachim Werner</B> 
+    <A HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20Long%20Output%20%26%20Data%20Extraction&In-Reply-To=%3C200807251305.41333.joe%40suse.de%3E"
+       TITLE="[TreeLine-users] Long Output &amp; Data Extraction">joe at suse.de
+       </A><BR>
+    <I>Fri Jul 25 13:05:40 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000032.html">[TreeLine-users] Long Output &amp; Data Extraction
+</A></li>
+        <LI>Next message: <A HREF="000035.html">[TreeLine-users] Long Output &amp; Data Extraction
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#34">[ date ]</a>
+              <a href="thread.html#34">[ thread ]</a>
+              <a href="subject.html#34">[ subject ]</a>
+              <a href="author.html#34">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+On Donnerstag, 24. Juli 2008, Doug Bell wrote:
+&gt;<i> Gavin Holt wrote:
+</I>&gt;<i> &gt; This software is really very nice as it allows the collection of
+</I>&gt;<i> &gt; structured data in a portable environment, with encryption (important as
+</I>&gt;<i> &gt; I am a surgeon!). I have two questions: -
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Is it possible to have multi-page output - for my &quot;boiler plate&quot;
+</I>&gt;<i> &gt; documents?
+</I>&gt;<i>
+</I>&gt;<i> Yes, you can have multiple page output, but a single table can't span
+</I>&gt;<i> multiple pages.
+</I>&gt;<i>
+</I>&gt;<i> &gt; I have copied a quite long HTML document into the &quot;output format window&quot;
+</I>&gt;<i> &gt; and inserted the desired field codes. The data output window displays the
+</I>&gt;<i> &gt; whole document beautifully, but when printing we get one page of the
+</I>&gt;<i> &gt; document and a blank page, there are normally three full pages of A4. Is
+</I>&gt;<i> &gt; there a pagination routine to parse the output before its sent to the
+</I>&gt;<i> &gt; printer? Is it my single large table (used for three column formatting)
+</I>&gt;<i> &gt; which is causing the problem?
+</I>&gt;<i>
+</I>&gt;<i> Yes.  TreeLine's HTML engine isn't smart enough to insert page breaks
+</I>&gt;<i> inside tables.  It tries to keep tables together, but that causes
+</I>&gt;<i> problems when a single table is larger than a full page.  I might be
+</I>&gt;<i> able to fix this in the future, but it won't be anytime soon.
+</I>&gt;<i>
+</I>&gt;<i> There are some possible work-arounds, but none that give you quite
+</I>&gt;<i> what you want:
+</I>&gt;<i>
+</I>&gt;<i>   - Export the file to HTML, then use a web browser to print it.
+</I>
+My suggestion would be to use something like htmldoc (<A HREF="http://www.htmldoc.org/">http://www.htmldoc.org/</A>) 
+to create a PS or PDF doc before printing. htmldoc does a pretty good job 
+when it comes to properly formatting a document form HTML input.
+
+At least on Linux it should be straightforward to hack some integration into 
+treeline as a plugin.
+
+&gt;<i>   - Make each node its own table by replacing the Sibling Prefix/Suffix
+</I>&gt;<i>     tags with tags in the node output.  Unfortunately, this will cause
+</I>&gt;<i>     the columns to be misaligned.
+</I>&gt;<i>
+</I>&gt;<i>   - Create a spacer node type to act as a page break.  It should just
+</I>&gt;<i>     have a non-breaking space character (&nbsp;) as its only output.
+</I>&gt;<i>     Because they don't have Sibling Prefix/Suffix tags, these spacer
+</I>&gt;<i>     nodes would interrupt the big table, allowing TreeLine to break the
+</I>&gt;<i>     page at those locations.  But finding the right places for these
+</I>&gt;<i>     nodes would be guess-work.
+</I>&gt;<i>
+</I>&gt;<i>   - Replace the table with an output scheme that just uses text.
+</I>&gt;<i>
+</I>&gt;<i> Sorry that I don't have better options.
+</I>&gt;<i>
+</I>&gt;<i> &gt; Once a large amount of data is accumulated in a *.trl, is there a way of
+</I>&gt;<i> &gt; extracting just the data with &quot;relationships&quot;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; I need to audit my results and therefore want to run queries against data
+</I>&gt;<i> &gt; files. e.g. Number of patients with &quot;Total Hip Replacement&quot; as a child
+</I>&gt;<i> &gt; type, and Number of Patients with &quot;Total Hip Replacement&quot; as a child type
+</I>&gt;<i> &gt; where &quot;Infection&quot; is listed in the complications field.
+</I>&gt;<i> &gt; As you can see I really need to be able to export just the data as a set
+</I>&gt;<i> &gt; of linked tables. In the spirit of multi platform OS independence any
+</I>&gt;<i> &gt; well supported data file format (that will link to Access) would be
+</I>&gt;<i> &gt; great!! I don't have the expertise to walk the xml for myself - sorry.
+</I>&gt;<i>
+</I>&gt;<i> I can't think of a way to do this.  TreeLine can export to a
+</I>&gt;<i> tab-delimited text file, but only with a single level of data (the
+</I>&gt;<i> children of the selected node, not the grandchildren).  The closest you
+</I>&gt;<i> could come would be to use either the &quot;Flatten by Category&quot; command or
+</I>&gt;<i> to add child reference fields prior to export, but neither looks like a
+</I>&gt;<i> good option in this case.
+</I>
+I'm sure it would be possible to write an export filter that creates an SQL 
+dump that can be used to create the tables in Access, provided that the XML 
+can be converted to linked tables. Maybe even by just writing an XSLT 
+stylesheet. But it's not completely trivial. ;-)
+
+Cheers
+
+Joachim
+
+-- 
+Joachim Werner &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/treeline-users">joe at suse.de</A>&gt;
+Senior Product Manager Outbound EMEA
+--
+SUSE LINUX Products GmbH, GF: Markus Rex, HRB 16746 (AG N&#252;rnberg)
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000032.html">[TreeLine-users] Long Output &amp; Data Extraction
+</A></li>
+	<LI>Next message: <A HREF="000035.html">[TreeLine-users] Long Output &amp; Data Extraction
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#34">[ date ]</a>
+              <a href="thread.html#34">[ thread ]</a>
+              <a href="subject.html#34">[ subject ]</a>
+              <a href="author.html#34">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/treeline-users">More information about the TreeLine-users
+mailing list</a><br>
+</body></html>

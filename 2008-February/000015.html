@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [TreeLine-users] treeline builds but seems to be missing all	fonts
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/treeline-users/2008-February/index.html" >
+   <LINK REL="made" HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20treeline%20builds%20but%20seems%20to%20be%20missing%20all%0A%09fonts&In-Reply-To=%3C33E5734D-86D6-4785-88B1-052079EC9DA7%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000014.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[TreeLine-users] treeline builds but seems to be missing all	fonts</H1>
+    <B>David Reiser</B> 
+    <A HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20treeline%20builds%20but%20seems%20to%20be%20missing%20all%0A%09fonts&In-Reply-To=%3C33E5734D-86D6-4785-88B1-052079EC9DA7%40gmail.com%3E"
+       TITLE="[TreeLine-users] treeline builds but seems to be missing all	fonts">dbreiser at gmail.com
+       </A><BR>
+    <I>Fri Feb 22 23:41:44 CET 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000014.html">[TreeLine-users] treeline builds but seems to be missing all	fonts
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15">[ date ]</a>
+              <a href="thread.html#15">[ thread ]</a>
+              <a href="subject.html#15">[ subject ]</a>
+              <a href="author.html#15">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Sounds like you don't have the unstable tree enabled.
+
+Use 'fink configure' from a command line, answer 'yes' to the question  
+about using unstable (you should be able to just hit the carriage  
+return for all other questions). When fink configure finishes, so  
+'fink selfupdate', which will retrieve all the package descriptions  
+for  unstable files. Then you should be able to 'fink install treeline'.
+
+In finkcommander, use the Preferences dialog, fink tab, to check the  
+box about using unstable packages. After leaving Preferences, use the  
+Source menu -&gt; selfupdate to do the package list update. And treeline  
+should appear in the list.
+
+If you don't have qt3 installed, doing the installation will take a  
+while, since qt3 is huge, and you need it to build treeline. Pyqt will  
+also take a noticeable amount of time to build and install.
+
+Dave
+On Feb 22, 2008, at 4:55 PM, Stephen Brenner wrote:
+
+&gt;<i> Hi David,
+</I>&gt;<i>
+</I>&gt;<i> It appears that Alexander already had a powerpc
+</I>&gt;<i> fink package for 1.0.2-1.  But I couldn't find treeline
+</I>&gt;<i> in finkcommander or at the fink command line.
+</I>&gt;<i>
+</I>&gt;<i> I'll need a powerpc package until I upgrade my mac.
+</I>&gt;<i>
+</I>&gt;<i> Thanks,
+</I>&gt;<i>
+</I>&gt;<i> Steve
+</I>&gt;<i>
+</I>&gt;<i> On Feb 22, 2008, at 10:44 AM, David Reiser wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On Feb 22, 2008, at 12:24 PM, Stephen Brenner wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Has anyone put together a .dmg file for mac users
+</I>&gt;&gt;&gt;<i> who don't have the expertise to build their own?
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Thanks,
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Steve
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;<i> Not that I know of, but I'm pretty close to being able to post a fink
+</I>&gt;&gt;<i> package that will provide it.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I realize that's some extra overhead for the user, but the .dmg
+</I>&gt;&gt;<i> installer is a relatively huge overhead for whomever tries to  
+</I>&gt;&gt;<i> release/
+</I>&gt;&gt;<i> maintain that.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Dave
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;<i> TreeLine-users mailing list
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/treeline-users">TreeLine-users at lists.berlios.de</A>
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/treeline-users">https://lists.berlios.de/mailman/listinfo/treeline-users</A>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> TreeLine-users mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/treeline-users">TreeLine-users at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/treeline-users">https://lists.berlios.de/mailman/listinfo/treeline-users</A>
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000014.html">[TreeLine-users] treeline builds but seems to be missing all	fonts
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15">[ date ]</a>
+              <a href="thread.html#15">[ thread ]</a>
+              <a href="subject.html#15">[ subject ]</a>
+              <a href="author.html#15">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/treeline-users">More information about the TreeLine-users
+mailing list</a><br>
+</body></html>

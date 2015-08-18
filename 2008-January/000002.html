@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [TreeLine-users] Bug? 1.1.10: Release node numbering eats	node	titles
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/treeline-users/2008-January/index.html" >
+   <LINK REL="made" HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20Bug%3F%201.1.10%3A%20Release%20node%20numbering%20eats%0A%09node%09titles&In-Reply-To=%3C20080116122902.GA20467%40bellz.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000001.html">
+   <LINK REL="Next"  HREF="000003.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[TreeLine-users] Bug? 1.1.10: Release node numbering eats	node	titles</H1>
+    <B>Doug Bell</B> 
+    <A HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20Bug%3F%201.1.10%3A%20Release%20node%20numbering%20eats%0A%09node%09titles&In-Reply-To=%3C20080116122902.GA20467%40bellz.org%3E"
+       TITLE="[TreeLine-users] Bug? 1.1.10: Release node numbering eats	node	titles">doug101 at bellz.org
+       </A><BR>
+    <I>Wed Jan 16 13:29:02 CET 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000001.html">[TreeLine-users] Bug? 1.1.10: Development Snapshot Release node	numbering eats node titles
+</A></li>
+        <LI>Next message: <A HREF="000003.html">[TreeLine-users] Bug? 1.1.10: Release node numbering eats node	titles
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2">[ date ]</a>
+              <a href="thread.html#2">[ thread ]</a>
+              <a href="subject.html#2">[ subject ]</a>
+              <a href="author.html#2">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>marbux wrote:
+&gt;<i> Looking great. Some minor gremlins encountered so far. With Basic Long Text,
+</I>&gt;<i> selecting node numbering after node titles are created overwrites and
+</I>&gt;<i> replaces the titles with numbering rather than prepending numbers to
+</I>&gt;<i> existing titles. This is with the Windows installer version running on fully
+</I>&gt;<i> patched WinXP.
+</I>
+That is &quot;intended functionality&quot;  ;)
+
+When numbering for the first time, the user should enter a new field
+name as the &quot;Number Field&quot;.  If the name of an existing field is given,
+the content of that field is overwritten with the numbers.
+
+If you want the number shown before each title, you should give a new
+field name (such as &quot;Num&quot;) for the numbering, then change the Title or
+Output format to &quot;{*Num*} {*Name*}&quot;.
+
+I've thought about allowing numbers to be prepended to an existing field
+with existing data, but it causes problems when re-numbering.  The
+program could replace number-like text at the beginning of the field
+data, but that wouldn't always work, since numbering formats can vary
+significantly, and the results would be bad with any field text that
+originally started with a number (&quot;2 dozen eggs&quot;).
+
+&gt;<i> When creating a new Field type from the Configure Data Types &gt;&gt; Field List
+</I>&gt;<i> &gt;&gt; New Field dialog, if I enter illegal characters I get an error message
+</I>&gt;<i> that reads &quot;The following characters are not allowed:&quot;   However, the list
+</I>&gt;<i> of disallowed characters is missing from the error message.
+</I>
+Was the offending character a space?  Other illegal characters seem to
+show up OK for me.  Actually, the space is showing up, too - you just
+can't see it  ;)
+
+I'll add quotes to the error message, so that a space will show as &quot; &quot;.
+
+&gt;<i> Another potentially troublesome issue. The length of text in Basic Longtext
+</I>&gt;<i> seems to be limited to 200 lines. I often need to clip very long content
+</I>&gt;<i> from other sources when doing research so I have a complete record of source
+</I>&gt;<i> materials that I reference in papers I write. Is that a trait of the Basic
+</I>&gt;<i> Longtext template that I can work around by creating my own template or is
+</I>&gt;<i> that a coded barrier in Treeline itself? I found a relevant setting yet when
+</I>&gt;<i> working from the default template.
+</I>
+The number of lines option is only used for setting the height of the
+text edit box in the Data Editor view.  If an entry is longer than the
+setting, scroll bars will appear on the text edit box.  The maximum of
+200 lines for the editor height is reasonable (if not annoyingly high).
+
+&gt;<i> I haven't tried it yet, but wonder whether the latter issue might also raise
+</I>&gt;<i> issues when opening a lengthy document in a supported file format such as
+</I>&gt;<i> ODT. How does Treeline handle attempts to open an ODT file if a continuous
+</I>&gt;<i> block of text without headings is longer than 200 lines? I.e., does
+</I>&gt;<i> Treeline  generate an error message or truncate text without warning?
+</I>
+I just tested it with 3000 lines of text - it works fine.
+
+&gt;<i> Again, Treeline is looking very cool. Nice work!
+</I>
+Thanks!
+Doug.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000001.html">[TreeLine-users] Bug? 1.1.10: Development Snapshot Release node	numbering eats node titles
+</A></li>
+	<LI>Next message: <A HREF="000003.html">[TreeLine-users] Bug? 1.1.10: Release node numbering eats node	titles
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2">[ date ]</a>
+              <a href="thread.html#2">[ thread ]</a>
+              <a href="subject.html#2">[ subject ]</a>
+              <a href="author.html#2">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/treeline-users">More information about the TreeLine-users
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [TreeLine-users] Bug? 1.2.0: Cannot open Unicode filename
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/treeline-users/2008-October/index.html" >
+   <LINK REL="made" HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20Bug%3F%201.2.0%3A%20Cannot%20open%20Unicode%20filename&In-Reply-To=%3C20081022073943.5AEA.8A808EC7%40sky.email.ne.jp%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000040.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[TreeLine-users] Bug? 1.2.0: Cannot open Unicode filename</H1>
+    <B>Yukio Shiiya</B> 
+    <A HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20Bug%3F%201.2.0%3A%20Cannot%20open%20Unicode%20filename&In-Reply-To=%3C20081022073943.5AEA.8A808EC7%40sky.email.ne.jp%3E"
+       TITLE="[TreeLine-users] Bug? 1.2.0: Cannot open Unicode filename">shiiya at sky.email.ne.jp
+       </A><BR>
+    <I>Wed Oct 22 00:40:31 CEST 2008</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000040.html">[TreeLine-users] Bug? 1.2.0: Cannot open Unicode filename
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#39">[ date ]</a>
+              <a href="thread.html#39">[ thread ]</a>
+              <a href="subject.html#39">[ subject ]</a>
+              <a href="author.html#39">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+First of all, sorry for my poor English.
+
+TreeLine 1.2.0 on Windows can save the file with a filename using the
+Unicode, but when trying to open the file after closing it, an error
+occurs and cannot open it.
+
+Steps to reproduce the symptom is shown below.
+
+1. Run TreeLine.
+
+2. Select [File]-[New] from menu bar.
+
+3. Select &quot;Default - No template&quot; as template.
+
+4. Without editing anything, select [File]-[Save As] from menu bar.
+
+5. Specify an arbitrary directory (ex. C:\) as the location to save the
+file, and specify an arbitrary filename using the Unicode (ex. &#12486;&#12473;&#12488;.trl
+(&quot;&#12486;&#12473;&#12488;&quot; means &quot;test&quot; in Japanese.)), and click the [Save] button.
+
+No error occurs then, and the file can be saved normally.
+
+6. Quit TreeLine.
+
+7. Open the file with a Unicode filename saved a while ago by
+double-click.
+
+However, the following error occurs and cannot open the file.
+
+&gt;<i> Errors occurred
+</I>&gt;<i> See the logfile 'E:\Program Files\TreeLine\lib\treeline.exe.log' for details
+</I>
+And the traceback outputted to the treeline.exe.log at this time is as
+follows:
+
+&gt;<i> Traceback (most recent call last):
+</I>&gt;<i>   File &quot;treeline.py&quot;, line 164, in &lt;module&gt;
+</I>&gt;<i>   File &quot;treeline.py&quot;, line 155, in main
+</I>&gt;<i>   File &quot;treemainwin.pyc&quot;, line 527, in openFile
+</I>&gt;<i>   File &quot;treemainwin.pyc&quot;, line 692, in autoSaveFilePath
+</I>&gt;<i> UnicodeDecodeError: 'ascii' codec can't decode byte 0x83 in position 3: ordinal not in range(128)
+</I>
+Guessing from this traceback, it seems that the internal filename code
+conversion has failed.
+Then, after changing the filename saved a while ago into the filename
+NOT using the Unicode (ex. test.trl), when double-click it, the file was
+opened successfully this time.
+
+I installed the source code of TreeLine and read it a little.
+However, as I am not familiar with Python, I was not able to find out a
+cause.
+
+Could you resolve this symptom?
+
+
+Finally, my environment is shown below.
+  OS       : WinXP Pro SP3 (Japanese Edition)
+  TreeLine : 1.2.0 (Downloaded from BerliOS)
+
+Thanks,
+
+--
+Yukio Shiiya &lt;shiiya @ sky.email.ne.jp&gt;
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000040.html">[TreeLine-users] Bug? 1.2.0: Cannot open Unicode filename
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#39">[ date ]</a>
+              <a href="thread.html#39">[ thread ]</a>
+              <a href="subject.html#39">[ subject ]</a>
+              <a href="author.html#39">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/treeline-users">More information about the TreeLine-users
+mailing list</a><br>
+</body></html>

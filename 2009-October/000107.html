@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [TreeLine-users] Treeline dies when trying to save or open a file (SLED 11, OpenSUSE 11.1)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/treeline-users/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20Treeline%20dies%20when%20trying%20to%20save%20or%20open%20a%0A%20file%20%28SLED%2011%2C%20OpenSUSE%2011.1%29&In-Reply-To=%3C4AE9B985.6060708%40ericsson.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000106.html">
+   <LINK REL="Next"  HREF="000108.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[TreeLine-users] Treeline dies when trying to save or open a file (SLED 11, OpenSUSE 11.1)</H1>
+    <B>Nenad Antic (EAB)</B> 
+    <A HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20Treeline%20dies%20when%20trying%20to%20save%20or%20open%20a%0A%20file%20%28SLED%2011%2C%20OpenSUSE%2011.1%29&In-Reply-To=%3C4AE9B985.6060708%40ericsson.com%3E"
+       TITLE="[TreeLine-users] Treeline dies when trying to save or open a file (SLED 11, OpenSUSE 11.1)">nenad.antic at ericsson.com
+       </A><BR>
+    <I>Thu Oct 29 16:49:25 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000106.html">[TreeLine-users] Treeline dies when trying to save or open a file (SLED 11, OpenSUSE 11.1)
+</A></li>
+        <LI>Next message: <A HREF="000108.html">[TreeLine-users] Treeline dies when trying to save or open a	file (SLED 11, OpenSUSE 11.1)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#107">[ date ]</a>
+              <a href="thread.html#107">[ thread ]</a>
+              <a href="subject.html#107">[ subject ]</a>
+              <a href="author.html#107">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I did the downgrade of PyQT to the SLE11 version. I also upgraded to the
+latest SLE11 sip. I tried the SLE SDK version as well as the package
+treeline-1.2.3-6.1.noarch.rpm that Joachim suggested.
+
+Unfortunately, I keep getting the same error. Regardless if I start
+1.2.0, 1.2.3 or 1.3.0 it croaks with
+---
+QProcessPrivate::createPipe: Cannot create pipe 0xe19060: Too many open
+files
+
+GLib-ERROR **: Cannot create pipe main loop wake-up: Too many open files
+
+aborting...
+Aborted
+...
+
+This is really strange. As far as I can tell I don't have any problems
+with anything else.
+
+Is there anything I can turn on to create traces to better pinpoint
+where it breaks.
+
+Regards,
+/nenad
+
+
+
+
+[10/29/2009 12:56 AM] Nenad Antic (EAB) wrote:
+&gt;<i> Hi,
+</I>&gt;<i>
+</I>&gt;<i> Thanks for the suggestions. I will try that version and change to the
+</I>&gt;<i> SLE python and pyqt packages. I think python is the SLE11 version but
+</I>&gt;<i> pyqt is from the OpenSUSE_KDE4_Core repo.
+</I>&gt;<i>
+</I>&gt;<i> I run KDE. However since I am not happy with the state of affairs of KDE
+</I>&gt;<i> 4.2 (what happened to file management in konqueror?) I have installed
+</I>&gt;<i> KDE 3.5 from OpenSUSE which I mainly run (hoping that the situation in
+</I>&gt;<i> KDE 4.3 will be good enough).
+</I>&gt;<i>
+</I>&gt;<i> /nenad
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> [10/28/2009 06:40 PM] Joachim Werner wrote:
+</I>&gt;<i>   
+</I>&gt;&gt;<i> Hi,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> if you don't need the latest, the original treeline for SLED 11 can be found 
+</I>&gt;&gt;<i> on the SLE 11 SDK:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> <A HREF="http://download.novell.com/protected/Summary.jsp?buildid=fQKpDcAhPVY">http://download.novell.com/protected/Summary.jsp?buildid=fQKpDcAhPVY</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> If you want something newer,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> <A HREF="http://download.opensuse.org/repositories/editors/SLE_11/noarch/treeline-1.2.3-6.1.noarch.rpm">http://download.opensuse.org/repositories/editors/SLE_11/noarch/treeline-1.2.3-6.1.noarch.rpm</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> is the latest package in the openSUSE build service that is supposed to work 
+</I>&gt;&gt;<i> on SLED 11 (with the Python and PyQt packages provided by SLED 11, not the 
+</I>&gt;&gt;<i> openSUSE 11.1 ones).
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> If this doesn't work, feel free to send me a bug report directly 
+</I>&gt;&gt;<i> (<A HREF="https://lists.berlios.de/mailman/listinfo/treeline-users">joe at suse.de</A>). I'm trying to maintain the SLES and openSUSE packages in my 
+</I>&gt;&gt;<i> free time.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> There shouldn't be any practical difference between the treeline from 
+</I>&gt;&gt;<i> <A HREF="http://treeline.bellz.org/download.html">http://treeline.bellz.org/download.html</A> and my packages, because it's all 
+</I>&gt;&gt;<i> Python and isn't even compiled specifically for SLED 11. So I guess Doug is 
+</I>&gt;&gt;<i> right that this must be a compatibility issue with a library, most likely 
+</I>&gt;&gt;<i> between PyQt and Qt. Are you running treeline on a KDE or Gnome desktop?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> BTW, in case the question comes up: I haven't updated to 1.2.4 because those 
+</I>&gt;&gt;<i> changes seemed minor, and I haven't found the time yet to build 1.3.0 
+</I>&gt;&gt;<i> packages (which are labeled &quot;unstable&quot; anyway).
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Cheers
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Joachim
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On Mittwoch, 28. Oktober 2009, Nenad Antic (EAB) wrote:
+</I>&gt;&gt;<i>   
+</I>&gt;&gt;<i>     
+</I>&gt;&gt;&gt;<i> I have a weird problem.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I have been using treeline for a few years. Both on Windows as well as
+</I>&gt;&gt;&gt;<i> on Linux. On Linux I am not sure about which distros since they differ
+</I>&gt;&gt;&gt;<i> depending on the machine I happen to work at, but they have been Debian,
+</I>&gt;&gt;&gt;<i> Ubuntu 7, 8 and 9, OpenSUSE 10 and 11 and SLED/SLES 10 and 11 (Novell's
+</I>&gt;&gt;&gt;<i> versions of OpenSUSE).
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I upgraded to SLED 11 on my laptop in July. On top of that I run a
+</I>&gt;&gt;&gt;<i> number of OpenSUSE 11.1 apps, this includes Treeline. (However version
+</I>&gt;&gt;&gt;<i> 1.3.0 was downloaded from the main download site.)
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> My problem now, which I discovered only recently, is that Treeline
+</I>&gt;&gt;&gt;<i> crashes when I try to save a file, both plain save and save as. It also
+</I>&gt;&gt;&gt;<i> crashes when I try to open a file from the Treeline File menu. But it
+</I>&gt;&gt;&gt;<i> works fine to invoke Treeline with a file name.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I have tried with different versions, 1.2.2, 1.2.3, 1.2.4 and 1.3.0. I
+</I>&gt;&gt;&gt;<i> have updated Python to the latest available packages on opensuse.org.
+</I>&gt;&gt;&gt;<i> But I get the same problem. I have googled trying to find similar
+</I>&gt;&gt;&gt;<i> problems resolved by others, but to no avail.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I don't know Python so I don't know how to troubleshoot anything Python
+</I>&gt;&gt;&gt;<i> related.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I have attached the last few screens of the log from when I start
+</I>&gt;&gt;&gt;<i> treeline with strace. Maybe there is something to give a clue in there
+</I>&gt;&gt;&gt;<i> to why it dies. This is when I try to use &quot;Save as&quot; immediately after
+</I>&gt;&gt;&gt;<i> Treeline has started.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> What else can I do?
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Best regards,
+</I>&gt;&gt;&gt;<i> /nenad
+</I>&gt;&gt;&gt;<i>     
+</I>&gt;&gt;&gt;<i>       
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>   
+</I>&gt;&gt;<i>     
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000106.html">[TreeLine-users] Treeline dies when trying to save or open a file (SLED 11, OpenSUSE 11.1)
+</A></li>
+	<LI>Next message: <A HREF="000108.html">[TreeLine-users] Treeline dies when trying to save or open a	file (SLED 11, OpenSUSE 11.1)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#107">[ date ]</a>
+              <a href="thread.html#107">[ thread ]</a>
+              <a href="subject.html#107">[ subject ]</a>
+              <a href="author.html#107">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/treeline-users">More information about the TreeLine-users
+mailing list</a><br>
+</body></html>

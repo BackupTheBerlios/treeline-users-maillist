@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [TreeLine-users] New feature request
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/treeline-users/2011-February/index.html" >
+   <LINK REL="made" HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20New%20feature%20request&In-Reply-To=%3C20110208120822.GA23581%40bellz.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000135.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[TreeLine-users] New feature request</H1>
+    <B>Doug Bell</B> 
+    <A HREF="mailto:treeline-users%40lists.berlios.de?Subject=Re%3A%20%5BTreeLine-users%5D%20New%20feature%20request&In-Reply-To=%3C20110208120822.GA23581%40bellz.org%3E"
+       TITLE="[TreeLine-users] New feature request">doug101 at bellz.org
+       </A><BR>
+    <I>Tue Feb  8 13:08:22 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000135.html">[TreeLine-users] New feature request
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#136">[ date ]</a>
+              <a href="thread.html#136">[ thread ]</a>
+              <a href="subject.html#136">[ subject ]</a>
+              <a href="author.html#136">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Michele Brami wrote:
+&gt;<i> Hello Doug,
+</I>&gt;<i> Hello everyone,
+</I>&gt;<i> 
+</I>&gt;<i> This is my first message to the list.
+</I>&gt;<i> I found this light and higly customizable outliner very useful... or
+</I>&gt;<i> better the most useful of all the outliners i found.
+</I>
+Thanks!
+
+&gt;<i> I don't know if this request may be of some use for everyone but... well
+</I>&gt;<i> it would work for me!
+</I>&gt;<i> 
+</I>&gt;<i> 1 - I would like to configure a field type as &quot;custom&quot; and select an
+</I>&gt;<i> existing custom datatype in order to nest it in my item and avoid mixing
+</I>&gt;<i> different data types among one node's childs. I expect that this would
+</I>&gt;<i> lead to some kind of &quot;endless recursive tree&quot; if used improperly... Am I
+</I>&gt;<i> wrong?
+</I>
+It would be a recursive mess if you allow a custom field to be set to
+another custom field.  Otherwise that shouldn't be a problem.
+
+But I don't see the advantage of this approach.  Why not mix different
+types of children?  You still have to set the actual field format, so
+why not keep it simple and use the regular data type setting?
+
+More detail on why you want this would be helpful.
+
+
+&gt;<i> 2 - Another useful feature, always looking to field types, would be the
+</I>&gt;<i> ability to define a field as &quot;repeatable&quot;: once the field has been
+</I>&gt;<i> filled on the editor view, another instance of the field should be
+</I>&gt;<i> created just below the filled one, in order to create a simple &quot;in-line&quot;
+</I>&gt;<i> list that could be rendered in the output view as a table...
+</I>
+But how would the output distinguish between repeatable field n and
+field n+1?  And the views wouldn't know how many fields to show until
+they looked at the contents of each node.  This seems ugly to code.
+
+I'd recommend using child nodes when you have a variable number of
+sub-items to display.
+
+
+&gt;<i> 3 - Finally I end up with a question: is it possible, and eventually
+</I>&gt;<i> how, to write an output code for a data type in order to automatically
+</I>&gt;<i> generate a clickable &quot;content summary&quot; for all childs of a node?
+</I>
+You can create a summary now, but not a clickable one.  In the Output
+tab of the Configure Data Types dialog (with Advanced features shown),
+select &quot;Child Reference&quot; under the &quot;Reference Level&quot; and the choose the
+applicable child type under &quot;Reference Type&quot;.  Then just move the child
+fields into the Output Format box.
+
+Actually, it is possible to do a clickable list of children, but I can't
+think of a way to get unique text in each link.  If you show the child
+list as described above, but set the separator string (under Tools-&gt;File
+Options) to something like this:
+   &quot;&gt;child&lt;/a&gt; &lt;a href=&quot;#
+Of course, the text in the Output box would need to include partial tags
+in order for the first and last items to work.  This will get you the
+links, but unfortunately with the same text in each one.
+
+If you tell me more about your application for this, I might have more
+suggestions.
+
+   - Doug
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000135.html">[TreeLine-users] New feature request
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#136">[ date ]</a>
+              <a href="thread.html#136">[ thread ]</a>
+              <a href="subject.html#136">[ subject ]</a>
+              <a href="author.html#136">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/treeline-users">More information about the TreeLine-users
+mailing list</a><br>
+</body></html>
